@@ -3,362 +3,317 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Code Hub Namibia | Digital Gaming Store</title>
+<title>Code Hub Namibia</title>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at top, #172033 0%, #080b12 45%, #05070b 100%);
-    color: white;
-    min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #080b12;
+  color: white;
+  min-height: 100vh;
 }
 
 header {
-    padding: 24px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 22px 20px;
+  border-bottom: 1px solid #202633;
+  text-align: center;
 }
 
 .logo {
-    font-size: 23px;
-    font-weight: 900;
-    letter-spacing: 1px;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .logo span {
-    color: #00d9ff;
-}
-
-.nav {
-    font-size: 14px;
-    color: #aeb8c7;
+  color: #00e5ff;
 }
 
 .hero {
-    text-align: center;
-    padding: 75px 20px 55px;
+  text-align: center;
+  padding: 55px 20px 35px;
 }
 
 .badge {
-    display: inline-block;
-    padding: 8px 15px;
-    border: 1px solid rgba(0,217,255,0.4);
-    border-radius: 30px;
-    color: #00d9ff;
-    background: rgba(0,217,255,0.06);
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+  display: inline-block;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: #00e5ff;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 8vw, 78px);
-    line-height: 0.95;
-    font-weight: 900;
-    letter-spacing: -3px;
-    margin-bottom: 20px;
+  font-size: clamp(38px, 8vw, 68px);
+  line-height: 1;
+  margin-bottom: 18px;
 }
 
 .hero h1 span {
-    color: #00d9ff;
+  color: #00e5ff;
 }
 
 .hero p {
-    max-width: 600px;
-    margin: auto;
-    color: #9da8b8;
-    font-size: 17px;
-    line-height: 1.6;
+  color: #9ca6b8;
+  font-size: 17px;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
 }
 
 .products {
-    width: 90%;
-    max-width: 1150px;
-    margin: 20px auto 80px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.section-title h2 {
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.section-title p {
-    color: #8490a1;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+  max-width: 1050px;
+  margin: 30px auto 70px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
 }
 
 .card {
-    background: rgba(17, 22, 33, 0.9);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 22px;
-    padding: 18px;
-    transition: 0.3s ease;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  background: #111621;
+  border: 1px solid #252c3a;
+  border-radius: 18px;
+  padding: 18px;
+  transition: 0.2s;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(0,217,255,0.45);
-    box-shadow: 0 25px 60px rgba(0,217,255,0.10);
+  transform: translateY(-4px);
+  border-color: #00e5ff;
 }
-
-/* DIGITAL GIFT CARD */
 
 .gift-card {
-    height: 210px;
-    border-radius: 17px;
-    padding: 25px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background:
-        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.28), transparent 25%),
-        linear-gradient(135deg, #11151e, #242b38 55%, #090c12);
-    border: 1px solid rgba(255,255,255,0.16);
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.1),
-        0 15px 40px rgba(0,0,0,0.4);
+  height: 145px;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(0,229,255,.35), transparent 35%),
+    linear-gradient(135deg, #171d2b, #090c13);
+  border: 1px solid #30394b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.gift-card::before {
-    content: "";
-    position: absolute;
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    border: 1px solid rgba(0,217,255,0.22);
-    right: -100px;
-    top: -100px;
+.ps {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.gift-card::after {
-    content: "";
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 1px solid rgba(0,217,255,0.14);
-    right: -60px;
-    bottom: -100px;
-}
-
-.ps-logo {
-    font-size: 15px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    position: relative;
-    z-index: 2;
-}
-
-.ps-logo span {
-    color: #00d9ff;
-}
-
-.store-text {
-    font-size: 11px;
-    color: #aab4c2;
-    letter-spacing: 2px;
-    margin-top: 4px;
-    position: relative;
-    z-index: 2;
+.store {
+  color: #00e5ff;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .amount {
-    font-size: 48px;
-    font-weight: 900;
-    letter-spacing: -2px;
-    position: relative;
-    z-index: 2;
+  font-size: 28px;
+  font-weight: 900;
 }
 
-.currency {
-    color: #00d9ff;
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 7px;
 }
 
-.card-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
-
-.digital {
-    font-size: 10px;
-    color: #8994a4;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.ps-symbol {
-    font-size: 25px;
-    font-weight: 900;
-    color: rgba(255,255,255,0.75);
-}
-
-.card-info {
-    padding: 18px 5px 3px;
-}
-
-.card-info h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.card-info p {
-    color: #8792a3;
-    font-size: 13px;
-    margin-bottom: 17px;
-}
-
-.price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.console {
+  color: #8f9aac;
+  font-size: 13px;
+  margin-bottom: 15px;
 }
 
 .price {
-    font-size: 21px;
-    font-weight: 900;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 15px;
 }
 
 .price small {
-    color: #7d8797;
-    font-size: 11px;
-    font-weight: normal;
+  color: #8f9aac;
+  font-size: 12px;
+  font-weight: normal;
 }
 
-.buy {
-    border: none;
-    background: #00d9ff;
-    color: #031016;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-weight: 900;
-    cursor: pointer;
-    transition: 0.2s;
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 11px;
+  background: #00e5ff;
+  color: #001014;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
 }
 
-.buy:hover {
-    transform: scale(1.04);
-    box-shadow: 0 8px 25px rgba(0,217,255,0.25);
+button:hover {
+  background: #5defff;
 }
 
-.info-section {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto 80px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 18px;
+.info {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
 }
 
 .info-box {
-    padding: 25px;
-    text-align: center;
-    background: rgba(15,20,30,0.8);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 17px;
-}
-
-.info-icon {
-    font-size: 25px;
-    margin-bottom: 12px;
+  background: #111621;
+  border: 1px solid #252c3a;
+  border-radius: 15px;
+  padding: 20px;
 }
 
 .info-box h3 {
-    font-size: 15px;
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .info-box p {
-    color: #808b9c;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.notice {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto 60px;
-    padding: 18px 22px;
-    background: rgba(0,217,255,0.04);
-    border: 1px solid rgba(0,217,255,0.15);
-    border-radius: 14px;
-    text-align: center;
-    color: #8793a3;
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.notice strong {
-    color: #00d9ff;
+  color: #8f9aac;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 footer {
-    text-align: center;
-    padding: 30px 20px;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    color: #667181;
-    font-size: 12px;
+  border-top: 1px solid #202633;
+  text-align: center;
+  padding: 25px;
+  color: #6f7888;
+  font-size: 12px;
 }
 
-@media (max-width: 750px) {
+/* CHECKOUT */
 
-    header {
-        padding: 20px;
-    }
+#checkout {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #080b12;
+  overflow-y: auto;
+  z-index: 1000;
+}
 
-    .nav {
-        display: none;
-    }
+.checkout-container {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  padding: 25px 20px 50px;
+}
 
-    .hero {
-        padding: 55px 20px 40px;
-    }
+.back {
+  background: transparent;
+  color: #9ca6b8;
+  border: 1px solid #30394b;
+  margin-bottom: 30px;
+}
 
-    .hero h1 {
-        letter-spacing: -2px;
-    }
+.back:hover {
+  background: #111621;
+  color: white;
+}
 
-    .grid {
-        grid-template-columns: 1fr;
-    }
+.checkout-title {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
 
-    .info-section {
-        grid-template-columns: 1fr;
-    }
+.checkout-subtitle {
+  color: #8f9aac;
+  margin-bottom: 30px;
+}
 
-    .gift-card {
-        height: 195px;
-    }
+.order-box {
+  background: #111621;
+  border: 1px solid #252c3a;
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
 
-    .amount {
-        font-size: 42px;
-    }
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 9px 0;
+}
+
+.order-row.total {
+  border-top: 1px solid #30394b;
+  margin-top: 10px;
+  padding-top: 18px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #b7c0ce;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #30394b;
+  background: #080b12;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+input:focus, select:focus {
+  border-color: #00e5ff;
+}
+
+.notice {
+  background: rgba(0,229,255,.07);
+  border: 1px solid rgba(0,229,255,.2);
+  color: #b9f7ff;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.confirmation {
+  display: none;
+  text-align: center;
+  padding: 50px 10px;
+}
+
+.confirmation-icon {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.confirmation h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.confirmation p {
+  color: #9ca6b8;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 </style>
 </head>
@@ -366,275 +321,264 @@ footer {
 <body>
 
 <header>
-    <div class="logo">CODE HUB <span>NAMIBIA</span></div>
-    <div class="nav">DIGITAL GAMING STORE</div>
+  <div class="logo">CODE HUB <span>NAMIBIA</span></div>
 </header>
 
+<main id="store">
+
 <section class="hero">
+  <div class="badge">🇳🇦 NAMIBIA'S DIGITAL GAMING STORE</div>
 
-    <div class="badge">🇳🇦 NAMIBIA'S DIGITAL GAMING STORE</div>
+  <h1>Game. Buy. <span>Play.</span></h1>
 
-    <h1>Game.<br><span>Buy. Play.</span></h1>
-
-    <p>
-        South African PlayStation Store vouchers,
-        delivered digitally. Choose your value and
-        get ready to play.
-    </p>
-
+  <p>
+    Digital PlayStation Store vouchers for gamers in Namibia.
+    Fast electronic delivery for PS4 & PS5.
+  </p>
 </section>
 
 <section class="products">
 
-    <div class="section-title">
-        <h2>PlayStation Store Vouchers</h2>
-        <p>South African PSN vouchers</p>
+  <div class="card">
+    <div class="gift-card">
+      <div class="ps">PLAYSTATION</div>
+      <div class="store">STORE GIFT CARD</div>
+      <div class="amount">R500</div>
     </div>
 
-    <div class="grid">
+    <h2>R500 PSN Voucher</h2>
+    <div class="console">🇿🇦 South Africa • PS4 & PS5</div>
+    <div class="price">N$499 <small>NAD</small></div>
 
-        <!-- R500 -->
-
-        <div class="card">
-
-            <div class="gift-card">
-
-                <div>
-                    <div class="ps-logo">
-                        PLAYSTATION <span>®</span>
-                    </div>
-
-                    <div class="store-text">
-                        STORE GIFT CARD
-                    </div>
-                </div>
-
-                <div class="amount">
-                    <span class="currency">R</span>500
-                </div>
-
-                <div class="card-bottom">
-                    <div class="digital">Digital Voucher</div>
-                    <div class="ps-symbol">PS</div>
-                </div>
-
-            </div>
-
-            <div class="card-info">
-                <h3>R500 PlayStation Store</h3>
-                <p>South Africa region</p>
-
-                <div class="price-row">
-                    <div class="price">
-                        N$499 <small>NAD</small>
-                    </div>
-
-                    <button class="buy" onclick="buyVoucher('R500')">
-                        Buy Now
-                    </button>
-                </div>
-            </div>
-
-        </div>
+    <button onclick="openCheckout('R500 PSN Voucher', 499)">
+      Buy Now
+    </button>
+  </div>
 
 
-        <!-- R750 -->
-
-        <div class="card">
-
-            <div class="gift-card">
-
-                <div>
-                    <div class="ps-logo">
-                        PLAYSTATION <span>®</span>
-                    </div>
-
-                    <div class="store-text">
-                        STORE GIFT CARD
-                    </div>
-                </div>
-
-                <div class="amount">
-                    <span class="currency">R</span>750
-                </div>
-
-                <div class="card-bottom">
-                    <div class="digital">Digital Voucher</div>
-                    <div class="ps-symbol">PS</div>
-                </div>
-
-            </div>
-
-            <div class="card-info">
-                <h3>R750 PlayStation Store</h3>
-                <p>South Africa region</p>
-
-                <div class="price-row">
-                    <div class="price">
-                        N$749 <small>NAD</small>
-                    </div>
-
-                    <button class="buy" onclick="buyVoucher('R750')">
-                        Buy Now
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- R1000 -->
-
-        <div class="card">
-
-            <div class="gift-card">
-
-                <div>
-                    <div class="ps-logo">
-                        PLAYSTATION <span>®</span>
-                    </div>
-
-                    <div class="store-text">
-                        STORE GIFT CARD
-                    </div>
-                </div>
-
-                <div class="amount">
-                    <span class="currency">R</span>1,000
-                </div>
-
-                <div class="card-bottom">
-                    <div class="digital">Digital Voucher</div>
-                    <div class="ps-symbol">PS</div>
-                </div>
-
-            </div>
-
-            <div class="card-info">
-                <h3>R1,000 PlayStation Store</h3>
-                <p>South Africa region</p>
-
-                <div class="price-row">
-                    <div class="price">
-                        N$999 <small>NAD</small>
-                    </div>
-
-                    <button class="buy" onclick="buyVoucher('R1,000')">
-                        Buy Now
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- R2000 -->
-
-        <div class="card">
-
-            <div class="gift-card">
-
-                <div>
-                    <div class="ps-logo">
-                        PLAYSTATION <span>®</span>
-                    </div>
-
-                    <div class="store-text">
-                        STORE GIFT CARD
-                    </div>
-                </div>
-
-                <div class="amount">
-                    <span class="currency">R</span>2,000
-                </div>
-
-                <div class="card-bottom">
-                    <div class="digital">Digital Voucher</div>
-                    <div class="ps-symbol">PS</div>
-                </div>
-
-            </div>
-
-            <div class="card-info">
-                <h3>R2,000 PlayStation Store</h3>
-                <p>South Africa region</p>
-
-                <div class="price-row">
-                    <div class="price">
-                        N$1,999 <small>NAD</small>
-                    </div>
-
-                    <button class="buy" onclick="buyVoucher('R2,000')">
-                        Buy Now
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
+  <div class="card">
+    <div class="gift-card">
+      <div class="ps">PLAYSTATION</div>
+      <div class="store">STORE GIFT CARD</div>
+      <div class="amount">R750</div>
     </div>
+
+    <h2>R750 PSN Voucher</h2>
+    <div class="console">🇿🇦 South Africa • PS4 & PS5</div>
+    <div class="price">N$749 <small>NAD</small></div>
+
+    <button onclick="openCheckout('R750 PSN Voucher', 749)">
+      Buy Now
+    </button>
+  </div>
+
+
+  <div class="card">
+    <div class="gift-card">
+      <div class="ps">PLAYSTATION</div>
+      <div class="store">STORE GIFT CARD</div>
+      <div class="amount">R1,000</div>
+    </div>
+
+    <h2>R1,000 PSN Voucher</h2>
+    <div class="console">🇿🇦 South Africa • PS4 & PS5</div>
+    <div class="price">N$999 <small>NAD</small></div>
+
+    <button onclick="openCheckout('R1,000 PSN Voucher', 999)">
+      Buy Now
+    </button>
+  </div>
+
+
+  <div class="card">
+    <div class="gift-card">
+      <div class="ps">PLAYSTATION</div>
+      <div class="store">STORE GIFT CARD</div>
+      <div class="amount">R2,000</div>
+    </div>
+
+    <h2>R2,000 PSN Voucher</h2>
+    <div class="console">🇿🇦 South Africa • PS4 & PS5</div>
+    <div class="price">N$1,999 <small>NAD</small></div>
+
+    <button onclick="openCheckout('R2,000 PSN Voucher', 1999)">
+      Buy Now
+    </button>
+  </div>
 
 </section>
 
+<section class="info">
 
-<section class="info-section">
+  <div class="info-box">
+    <h3>⚡ Digital Delivery</h3>
+    <p>Your voucher code will be delivered electronically after successful payment.</p>
+  </div>
 
-    <div class="info-box">
-        <div class="info-icon">⚡</div>
-        <h3>Digital Delivery</h3>
-        <p>
-            Your voucher code will be delivered
-            electronically after checkout.
-        </p>
-    </div>
+  <div class="info-box">
+    <h3>🔒 Secure Checkout</h3>
+    <p>Your checkout information will be handled securely.</p>
+  </div>
 
-    <div class="info-box">
-        <div class="info-icon">🔒</div>
-        <h3>Secure Checkout</h3>
-        <p>
-            Safe and simple checkout designed
-            for gamers in Namibia.
-        </p>
-    </div>
-
-    <div class="info-box">
-        <div class="info-icon">🎮</div>
-        <h3>Made For Gamers</h3>
-        <p>
-            Easy access to South African
-            PlayStation Store credit.
-        </p>
-    </div>
+  <div class="info-box">
+    <h3>🎮 PS4 & PS5</h3>
+    <p>South African PlayStation Store vouchers for PS4 and PS5 accounts.</p>
+  </div>
 
 </section>
-
-
-<div class="notice">
-
-    <strong>Important:</strong>
-    These vouchers are for PlayStation Network accounts
-    registered in South Africa. Make sure your PSN account
-    region matches before purchasing.
-
-</div>
-
 
 <footer>
-    © 2026 Code Hub Namibia · Digital Gaming Store
+  © 2026 Code Hub Namibia
 </footer>
+
+</main>
+
+
+<!-- CHECKOUT -->
+
+<section id="checkout">
+
+  <div class="checkout-container">
+
+    <button class="back" onclick="closeCheckout()">← Back to Store</button>
+
+    <div id="checkoutForm">
+
+      <h1 class="checkout-title">Checkout</h1>
+
+      <p class="checkout-subtitle">
+        Complete your order details below.
+      </p>
+
+      <div class="order-box">
+
+        <div class="order-row">
+          <span>Product</span>
+          <strong id="checkoutProduct"></strong>
+        </div>
+
+        <div class="order-row">
+          <span>Delivery</span>
+          <span>Digital</span>
+        </div>
+
+        <div class="order-row total">
+          <span>Total</span>
+          <span id="checkoutPrice"></span>
+        </div>
+
+      </div>
+
+      <div class="order-box">
+
+        <label for="email">Email address</label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="you@example.com"
+          required
+        >
+
+        <label for="confirmEmail">Confirm email address</label>
+
+        <input
+          id="confirmEmail"
+          type="email"
+          placeholder="you@example.com"
+          required
+        >
+
+        <div class="notice">
+          📧 Your voucher will be sent to the email address you provide.
+        </div>
+
+        <button onclick="continueCheckout()">
+          Continue to Payment
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="confirmation" id="confirmation">
+
+      <div class="confirmation-icon">✅</div>
+
+      <h2>Order Ready</h2>
+
+      <p>
+        Your order details have been received.
+        The real payment gateway and automatic voucher delivery
+        will be connected here next.
+      </p>
+
+      <button onclick="closeCheckout()">
+        Back to Store
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 <script>
 
-function buyVoucher(value) {
+let selectedProduct = "";
+let selectedPrice = 0;
 
-    alert(
-        "You selected the " +
-        value +
-        " PlayStation Store voucher.\n\n" +
-        "Checkout will be available soon!"
-    );
+function openCheckout(product, price) {
 
+  selectedProduct = product;
+  selectedPrice = price;
+
+  document.getElementById("checkoutProduct").textContent = product;
+  document.getElementById("checkoutPrice").textContent =
+    "N$" + price.toLocaleString();
+
+  document.getElementById("store").style.display = "none";
+  document.getElementById("checkout").style.display = "block";
+
+  window.scrollTo(0, 0);
+}
+
+
+function closeCheckout() {
+
+  document.getElementById("checkout").style.display = "none";
+  document.getElementById("store").style.display = "block";
+
+  document.getElementById("checkoutForm").style.display = "block";
+  document.getElementById("confirmation").style.display = "none";
+
+  document.getElementById("email").value = "";
+  document.getElementById("confirmEmail").value = "";
+
+  window.scrollTo(0, 0);
+}
+
+
+function continueCheckout() {
+
+  const email = document.getElementById("email").value.trim();
+  const confirmEmail =
+    document.getElementById("confirmEmail").value.trim();
+
+  if (!email || !confirmEmail) {
+    alert("Please enter your email address.");
+    return;
+  }
+
+  if (email !== confirmEmail) {
+    alert("The email addresses do not match.");
+    return;
+  }
+
+  document.getElementById("checkoutForm").style.display = "none";
+  document.getElementById("confirmation").style.display = "block";
 }
 
 </script>
