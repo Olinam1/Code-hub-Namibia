@@ -610,7 +610,100 @@ function updateTotal() {
 
 /* CREATE ORDER */
 
-function createOrder() {
+async function createOrder() {
+
+  const email = document.getElementById("email").value.trim();
+  const confirmEmail = document.getElementById("confirmEmail").value.trim();
+
+  if (!email) {
+    alert("Please enter your email address.");
+    return;
+  }
+
+  if (!email.includes("@")) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  if (!confirmEmail) {
+    alert("Please confirm your email address.");
+    return;
+  }
+
+  if (email !== confirmEmail) {
+    alert("The email addresses do not match.");
+    return;
+  }
+
+  const button = document.querySelector(".confirm");
+
+  button.disabled = true;
+  button.textContent = "Creating Order...";
+
+  try {
+
+    const response = await fetch("/api/create-order", {
+
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({
+        product: selectedProduct,
+        price: selectedPrice,
+        quantity: quantity,
+        email: email
+      })
+
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      throw new Error(
+        data.message || "Unable to create order."
+      );
+    }
+
+    const order = data.order;
+
+    document.getElementById("orderNumber").textContent =
+      "Order #" + order.orderNumber;
+
+    document.getElementById("confirmProduct").textContent =
+      order.product;
+
+    document.getElementById("confirmQuantity").textContent =
+      order.quantity;
+
+    document.getElementById("confirmTotal").textContent =
+      "N$" + Number(order.total).toLocaleString();
+
+    document.getElementById("confirmEmailAddress").textContent =
+      order.email;
+
+    document.getElementById("checkout").style.display = "none";
+    document.getElementById("confirmation").style.display = "block";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert(
+      "We couldn't create your order. Please try again."
+    );
+
+    button.disabled = false;
+    button.textContent = "Continue to Payment";
+  }
+}
 
   const email = document.getElementById("email").value.trim();
   const confirmEmail = document.getElementById("confirmEmail").value.trim();
