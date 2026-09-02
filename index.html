@@ -3,143 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Hub Namibia</title>
+  <title>Code Hub Namibia | Digital Gaming Store</title>
+
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       background: #0b0b0f;
       color: white;
     }
 
     header {
-      padding: 25px;
-      text-align: center;
-      background: #15151d;
+      background: #111118;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #292934;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
     }
 
-    header p {
-      color: #aaa;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
+    .logo span {
+      color: #00d9ff;
     }
 
     .hero {
       text-align: center;
-      padding: 40px 10px;
+      padding: 70px 20px;
+      background: linear-gradient(135deg, #111118, #15152b);
     }
 
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #00d9ff;
     }
 
     .hero p {
-      color: #bbb;
+      color: #b7b7c5;
       font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #00d9ff;
+      border-radius: 20px;
+      color: #00d9ff;
+      font-size: 13px;
+      margin-bottom: 20px;
     }
 
     .products {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 35px;
+    }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
-    .product {
-      background: #171720;
+    .card {
+      background: #15151d;
+      border: 1px solid #292934;
+      border-radius: 16px;
       padding: 25px;
-      border-radius: 15px;
       text-align: center;
+      transition: 0.2s;
     }
 
-    .product h3 {
-      margin-top: 0;
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #00d9ff;
+    }
+
+    .psn {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .price {
       font-size: 24px;
       font-weight: bold;
-      margin: 20px 0;
+      color: #00d9ff;
+      margin: 15px 0;
     }
 
-    button {
+    .card button {
+      width: 100%;
+      padding: 13px;
       border: none;
-      padding: 13px 20px;
-      border-radius: 8px;
-      background: #ffffff;
-      color: #000;
+      border-radius: 10px;
+      background: #00d9ff;
+      color: #061014;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
     }
 
-    footer {
+    .card button:hover {
+      opacity: 0.85;
+    }
+
+    .info {
       text-align: center;
-      padding: 40px;
-      color: #777;
+      padding: 30px 20px 60px;
+      color: #aaaab5;
+    }
+
+    footer {
+      background: #111118;
+      border-top: 1px solid #292934;
+      text-align: center;
+      padding: 25px;
+      color: #777783;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero {
+        padding: 55px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>CODE HUB NAMIBIA</h1>
-  <p>Digital Gaming Store</p>
-</header>
-
-<div class="container">
+  <header>
+    <div class="logo">CODE HUB <span>NAMIBIA</span></div>
+    <div>🎮</div>
+  </header>
 
   <section class="hero">
-    <h2>Game. Buy. Play.</h2>
-    <p>Digital gaming vouchers delivered electronically.</p>
+    <div class="badge">🇳🇦 NAMIBIA'S DIGITAL GAMING STORE</div>
+
+    <h1>Game. <span>Buy.</span> Play.</h1>
+
+    <p>Digital gaming vouchers delivered quickly and conveniently.</p>
   </section>
 
   <section class="products">
+    <h2>PlayStation Network Vouchers</h2>
 
-    <div class="product">
-      <h3>PlayStation Network</h3>
-      <p>South Africa</p>
-      <div class="price">R500</div>
-      <button>Buy Now</button>
+    <div class="grid">
+
+      <div class="card">
+        <div class="psn">🎮</div>
+        <h3>PSN R500</h3>
+        <p>South Africa</p>
+        <div class="price">N$499</div>
+        <button onclick="alert('Checkout coming soon!')">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <div class="psn">🎮</div>
+        <h3>PSN R750</h3>
+        <p>South Africa</p>
+        <div class="price">N$749</div>
+        <button onclick="alert('Checkout coming soon!')">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <div class="psn">🎮</div>
+        <h3>PSN R1,000</h3>
+        <p>South Africa</p>
+        <div class="price">N$999</div>
+        <button onclick="alert('Checkout coming soon!')">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <div class="psn">🎮</div>
+        <h3>PSN R2,000</h3>
+        <p>South Africa</p>
+        <div class="price">N$1,999</div>
+        <button onclick="alert('Checkout coming soon!')">Buy Now</button>
+      </div>
+
     </div>
-
-    <div class="product">
-      <h3>PlayStation Network</h3>
-      <p>South Africa</p>
-      <div class="price">R750</div>
-      <button>Buy Now</button>
-    </div>
-
-    <div class="product">
-      <h3>PlayStation Network</h3>
-      <p>South Africa</p>
-      <div class="price">R1,000</div>
-      <button>Buy Now</button>
-    </div>
-
-    <div class="product">
-      <h3>PlayStation Network</h3>
-      <p>South Africa</p>
-      <div class="price">R2,000</div>
-      <button>Buy Now</button>
-    </div>
-
   </section>
 
-</div>
+  <div class="info">
+    <p>⚡ Digital delivery</p>
+    <p>🔒 Secure checkout</p>
+    <p>🇳🇦 Built for gamers in Namibia</p>
+  </div>
 
-<footer>
-  © 2026 Code Hub Namibia
-</footer>
+  <footer>
+    © 2026 Code Hub Namibia. All rights reserved.
+  </footer>
 
 </body>
 </html>
