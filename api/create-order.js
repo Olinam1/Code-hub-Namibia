@@ -74,6 +74,8 @@ export default async function handler(req, res) {
 
       return res.status(500).json({
         success: false,
+        supabase_status: response.status,
+        supabase_error: errorText,
         message: "Unable to save order"
       });
     }
@@ -128,6 +130,7 @@ export default async function handler(req, res) {
 
     return res.status(500).json({
       success: false,
+      error: error.message,
       message: "Unable to create order"
     });
   }
