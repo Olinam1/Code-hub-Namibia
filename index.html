@@ -6,396 +6,411 @@
 <title>Code Hub Namibia</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#070b12;
+color:#fff;
+min-height:100vh
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #070b12;
-    color: white;
-    min-height: 100vh;
+.container{
+width:92%;
+max-width:1100px;
+margin:auto
 }
 
-.container {
-    width: 92%;
-    max-width: 1100px;
-    margin: auto;
+header{
+padding:24px 0;
+border-bottom:1px solid #17202d
 }
 
-header {
-    padding: 24px 0;
-    border-bottom: 1px solid #17202d;
+.logo{
+font-size:25px;
+font-weight:900;
+letter-spacing:1px
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: 900;
-    letter-spacing: 1px;
+.logo span{color:#00e5ff}
+
+.hero{
+text-align:center;
+padding:60px 15px 45px
 }
 
-.logo span {
-    color: #00e5ff;
+.badge{
+display:inline-block;
+padding:8px 14px;
+border:1px solid #00e5ff;
+border-radius:30px;
+color:#00e5ff;
+font-size:12px;
+font-weight:bold;
+margin-bottom:18px
 }
 
-.hero {
-    text-align: center;
-    padding: 60px 15px 45px;
+.hero h1{
+font-size:clamp(38px,8vw,70px);
+line-height:1;
+margin-bottom:18px
 }
 
-.badge {
-    display: inline-block;
-    padding: 8px 14px;
-    border: 1px solid #00e5ff;
-    border-radius: 30px;
-    color: #00e5ff;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 18px;
+.hero h1 span{color:#00e5ff}
+
+.hero p{
+color:#9da9b8;
+max-width:650px;
+margin:auto;
+font-size:17px;
+line-height:1.6
 }
 
-.hero h1 {
-    font-size: clamp(38px, 8vw, 70px);
-    line-height: 1;
-    margin-bottom: 18px;
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+padding-bottom:45px
 }
 
-.hero h1 span {
-    color: #00e5ff;
+.card{
+background:#0d131d;
+border:1px solid #1c2836;
+border-radius:18px;
+padding:18px;
+transition:.2s
 }
 
-.hero p {
-    color: #9da9b8;
-    max-width: 650px;
-    margin: auto;
-    font-size: 17px;
-    line-height: 1.6;
+.card:hover{
+transform:translateY(-4px);
+border-color:#00e5ff
 }
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    padding-bottom: 45px;
+.gift{
+height:145px;
+border-radius:12px;
+background:linear-gradient(135deg,#161d28,#05070b);
+border:1px solid #303b4a;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:20px;
+margin-bottom:18px;
+position:relative;
+overflow:hidden
 }
 
-.card {
-    background: #0d131d;
-    border: 1px solid #1c2836;
-    border-radius: 18px;
-    padding: 18px;
-    transition: 0.2s;
+.gift:after{
+content:"";
+position:absolute;
+width:100px;
+height:100px;
+border:18px solid #00e5ff;
+border-radius:50%;
+right:-45px;
+top:-45px;
+opacity:.25
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    border-color: #00e5ff;
+.playstation{
+font-size:13px;
+font-weight:bold;
+letter-spacing:2px
 }
 
-.gift {
-    height: 145px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #161d28, #05070b);
-    border: 1px solid #303b4a;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    margin-bottom: 18px;
-    position: relative;
-    overflow: hidden;
+.store{
+font-size:10px;
+color:#9da9b8;
+margin-top:4px;
+letter-spacing:1px
 }
 
-.gift:after {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border: 18px solid #00e5ff;
-    border-radius: 50%;
-    right: -45px;
-    top: -45px;
-    opacity: 0.25;
+.amount{
+font-size:29px;
+font-weight:900;
+color:#00e5ff;
+margin-top:12px
 }
 
-.playstation {
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
+.card h3{
+font-size:18px;
+margin-bottom:6px
 }
 
-.store {
-    font-size: 10px;
-    color: #9da9b8;
-    margin-top: 4px;
-    letter-spacing: 1px;
+.price{
+color:#00e5ff;
+font-size:22px;
+font-weight:bold;
+margin-bottom:14px
 }
 
-.amount {
-    font-size: 29px;
-    font-weight: 900;
-    color: #00e5ff;
-    margin-top: 12px;
+.buy{
+width:100%;
+border:none;
+border-radius:10px;
+padding:13px;
+background:#00e5ff;
+color:#001014;
+font-size:15px;
+font-weight:900;
+cursor:pointer
 }
 
-.card h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
+.info{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+padding-bottom:50px
 }
 
-.price {
-    color: #00e5ff;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 14px;
+.info-box{
+background:#0d131d;
+border:1px solid #1c2836;
+border-radius:15px;
+padding:20px;
+text-align:center
 }
 
-.buy {
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 13px;
-    background: #00e5ff;
-    color: #001014;
-    font-size: 15px;
-    font-weight: 900;
-    cursor: pointer;
+.info-box strong{
+display:block;
+margin-bottom:7px
 }
 
-.buy:hover {
-    opacity: 0.85;
-}
-
-.info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding-bottom: 50px;
-}
-
-.info-box {
-    background: #0d131d;
-    border: 1px solid #1c2836;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-}
-
-.info-box strong {
-    display: block;
-    margin-bottom: 7px;
-}
-
-.info-box p {
-    color: #8995a5;
-    font-size: 13px;
+.info-box p{
+color:#8995a5;
+font-size:13px
 }
 
 /* CHECKOUT */
 
-#checkout {
-    display: none;
-    padding: 35px 0 70px;
+#checkout{
+display:none;
+padding:35px 0 70px
 }
 
-.checkout-box {
-    max-width: 650px;
-    margin: auto;
-    background: #0d131d;
-    border: 1px solid #1c2836;
-    border-radius: 20px;
-    padding: 25px;
+.checkout-box{
+max-width:650px;
+margin:auto;
+background:#0d131d;
+border:1px solid #1c2836;
+border-radius:20px;
+padding:25px
 }
 
-.back {
-    background: transparent;
-    color: #9da9b8;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-    font-size: 14px;
+.back{
+background:transparent;
+color:#9da9b8;
+border:none;
+cursor:pointer;
+margin-bottom:20px;
+font-size:14px
 }
 
-.checkout-box h2 {
-    font-size: 30px;
-    margin-bottom: 25px;
+.checkout-box h2{
+font-size:30px;
+margin-bottom:25px
 }
 
-.order-item {
-    background: #080d14;
-    border: 1px solid #1c2836;
-    border-radius: 14px;
-    padding: 17px;
-    margin-bottom: 20px;
+.order-item{
+background:#080d14;
+border:1px solid #1c2836;
+border-radius:14px;
+padding:17px;
+margin-bottom:20px
 }
 
-.order-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+.order-top{
+display:flex;
+justify-content:space-between;
+gap:15px
 }
 
-.order-name {
-    font-weight: bold;
+.order-name{font-weight:bold}
+
+.order-price{
+color:#00e5ff;
+font-weight:bold
 }
 
-.order-price {
-    color: #00e5ff;
-    font-weight: bold;
+.quantity-row{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-top:18px
 }
 
-.quantity-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 18px;
+.quantity{
+display:flex;
+align-items:center;
+gap:12px
 }
 
-.quantity {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.quantity button{
+width:35px;
+height:35px;
+border-radius:9px;
+border:1px solid #344354;
+background:#121a25;
+color:white;
+font-size:20px;
+cursor:pointer
 }
 
-.quantity button {
-    width: 35px;
-    height: 35px;
-    border-radius: 9px;
-    border: 1px solid #344354;
-    background: #121a25;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+.quantity span{
+min-width:25px;
+text-align:center;
+font-weight:bold
 }
 
-.quantity span {
-    min-width: 25px;
-    text-align: center;
-    font-weight: bold;
+.summary{
+border-top:1px solid #1c2836;
+margin-top:20px;
+padding-top:18px
 }
 
-.summary {
-    border-top: 1px solid #1c2836;
-    margin-top: 20px;
-    padding-top: 18px;
+.summary-line{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+color:#9da9b8
 }
 
-.summary-line {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    color: #9da9b8;
+.total{
+color:white;
+font-size:21px;
+font-weight:900;
+margin-top:15px
 }
 
-.total {
-    color: white;
-    font-size: 21px;
-    font-weight: 900;
-    margin-top: 15px;
+.total span:last-child{color:#00e5ff}
+
+label{
+display:block;
+margin-top:22px;
+margin-bottom:7px;
+font-size:13px;
+color:#cbd3dd
 }
 
-.total span {
-    color: #00e5ff;
+input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #293646;
+background:#080d14;
+color:white;
+font-size:15px;
+outline:none
 }
 
-label {
-    display: block;
-    margin-top: 22px;
-    margin-bottom: 7px;
-    font-size: 13px;
-    color: #cbd3dd;
+input:focus{border-color:#00e5ff}
+
+/* PAYMENT */
+
+.payment-section{
+margin-top:25px;
+padding-top:22px;
+border-top:1px solid #1c2836
 }
 
-input {
-    width: 100%;
-    padding: 14px;
-    border-radius: 10px;
-    border: 1px solid #293646;
-    background: #080d14;
-    color: white;
-    font-size: 15px;
-    outline: none;
+.payment-title{
+font-size:16px;
+font-weight:bold;
+margin-bottom:12px
 }
 
-input:focus {
-    border-color: #00e5ff;
+.payment-option{
+border:1px solid #00e5ff;
+background:#0a151d;
+border-radius:13px;
+padding:17px;
+display:flex;
+align-items:center;
+gap:13px
 }
 
-.payment-button {
-    width: 100%;
-    margin-top: 25px;
-    padding: 15px;
-    border: none;
-    border-radius: 11px;
-    background: #00e5ff;
-    color: #001014;
-    font-size: 16px;
-    font-weight: 900;
-    cursor: pointer;
+.payment-radio{
+width:20px;
+height:20px;
+accent-color:#00e5ff
 }
 
-.error {
-    display: none;
-    color: #ff6678;
-    margin-top: 12px;
-    font-size: 13px;
+.payment-info strong{
+display:block;
+margin-bottom:4px
 }
 
-.ready {
-    display: none;
-    text-align: center;
-    padding: 30px 10px;
+.payment-info small{
+color:#8995a5
 }
 
-.ready-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
+.payment-note{
+margin-top:10px;
+color:#718096;
+font-size:12px;
+line-height:1.5
 }
 
-.ready h3 {
-    font-size: 26px;
-    margin-bottom: 10px;
+.error{
+display:none;
+color:#ff6678;
+margin-top:12px;
+font-size:13px
 }
 
-.ready p {
-    color: #9da9b8;
-    line-height: 1.6;
+.payment-button{
+width:100%;
+margin-top:25px;
+padding:15px;
+border:none;
+border-radius:11px;
+background:#00e5ff;
+color:#001014;
+font-size:16px;
+font-weight:900;
+cursor:pointer
 }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    border-top: 1px solid #17202d;
-    color: #657182;
-    font-size: 12px;
+.ready{
+display:none;
+text-align:center;
+padding:30px 10px
 }
 
-/* MOBILE */
-
-@media (max-width: 850px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .info {
-        grid-template-columns: 1fr;
-    }
+.ready-icon{
+font-size:48px;
+margin-bottom:15px
 }
 
-@media (max-width: 520px) {
-    .products {
-        grid-template-columns: 1fr;
-    }
+.ready h3{
+font-size:26px;
+margin-bottom:10px
+}
 
-    .hero {
-        padding-top: 45px;
-    }
+.ready p{
+color:#9da9b8;
+line-height:1.6
+}
 
-    .checkout-box {
-        padding: 20px;
-    }
+footer{
+text-align:center;
+padding:25px;
+border-top:1px solid #17202d;
+color:#657182;
+font-size:12px
+}
+
+@media(max-width:850px){
+.products{grid-template-columns:repeat(2,1fr)}
+.info{grid-template-columns:1fr}
+}
+
+@media(max-width:520px){
+.products{grid-template-columns:1fr}
+
+.hero{padding-top:45px}
+
+.checkout-box{padding:20px}
 }
 </style>
 </head>
@@ -403,114 +418,119 @@ footer {
 <body>
 
 <header>
-    <div class="container">
-        <div class="logo">CODE HUB <span>NAMIBIA</span></div>
-    </div>
+<div class="container">
+<div class="logo">CODE HUB <span>NAMIBIA</span></div>
+</div>
 </header>
 
 <main>
 
 <section class="hero" id="store">
-    <div class="container">
+<div class="container">
 
-        <div class="badge">🇳🇦 NAMIBIA'S DIGITAL GAMING STORE</div>
+<div class="badge">🇳🇦 NAMIBIA'S DIGITAL GAMING STORE</div>
 
-        <h1>Game. <span>Buy.</span> Play.</h1>
+<h1>Game. <span>Buy.</span> Play.</h1>
 
-        <p>
-            Digital PlayStation Store vouchers for gamers in Namibia.
-            Fast electronic delivery for PS4 & PS5.
-        </p>
+<p>
+Digital PlayStation Store vouchers for gamers in Namibia.
+Fast electronic delivery for PS4 & PS5.
+</p>
 
-    </div>
+</div>
 </section>
+
 
 <section class="container">
 
 <div class="products">
 
-    <div class="card">
-        <div class="gift">
-            <div class="playstation">PLAYSTATION</div>
-            <div class="store">STORE GIFT CARD</div>
-            <div class="amount">R500</div>
-        </div>
+<div class="card">
+<div class="gift">
+<div class="playstation">PLAYSTATION</div>
+<div class="store">STORE GIFT CARD</div>
+<div class="amount">R500</div>
+</div>
 
-        <h3>R500 PlayStation</h3>
-        <div class="price">N$499</div>
+<h3>R500 PlayStation</h3>
+<div class="price">N$499</div>
 
-        <button class="buy" onclick="openCheckout('R500 PlayStation',499)">
-            BUY NOW
-        </button>
-    </div>
-
-
-    <div class="card">
-        <div class="gift">
-            <div class="playstation">PLAYSTATION</div>
-            <div class="store">STORE GIFT CARD</div>
-            <div class="amount">R750</div>
-        </div>
-
-        <h3>R750 PlayStation</h3>
-        <div class="price">N$749</div>
-
-        <button class="buy" onclick="openCheckout('R750 PlayStation',749)">
-            BUY NOW
-        </button>
-    </div>
+<button class="buy"
+onclick="openCheckout('R500 PlayStation',499)">
+BUY NOW
+</button>
+</div>
 
 
-    <div class="card">
-        <div class="gift">
-            <div class="playstation">PLAYSTATION</div>
-            <div class="store">STORE GIFT CARD</div>
-            <div class="amount">R1,000</div>
-        </div>
+<div class="card">
+<div class="gift">
+<div class="playstation">PLAYSTATION</div>
+<div class="store">STORE GIFT CARD</div>
+<div class="amount">R750</div>
+</div>
 
-        <h3>R1,000 PlayStation</h3>
-        <div class="price">N$999</div>
+<h3>R750 PlayStation</h3>
+<div class="price">N$749</div>
 
-        <button class="buy" onclick="openCheckout('R1,000 PlayStation',999)">
-            BUY NOW
-        </button>
-    </div>
+<button class="buy"
+onclick="openCheckout('R750 PlayStation',749)">
+BUY NOW
+</button>
+</div>
 
 
-    <div class="card">
-        <div class="gift">
-            <div class="playstation">PLAYSTATION</div>
-            <div class="store">STORE GIFT CARD</div>
-            <div class="amount">R2,000</div>
-        </div>
+<div class="card">
+<div class="gift">
+<div class="playstation">PLAYSTATION</div>
+<div class="store">STORE GIFT CARD</div>
+<div class="amount">R1,000</div>
+</div>
 
-        <h3>R2,000 PlayStation</h3>
-        <div class="price">N$1,999</div>
+<h3>R1,000 PlayStation</h3>
+<div class="price">N$999</div>
 
-        <button class="buy" onclick="openCheckout('R2,000 PlayStation',1999)">
-            BUY NOW
-        </button>
-    </div>
+<button class="buy"
+onclick="openCheckout('R1,000 PlayStation',999)">
+BUY NOW
+</button>
+</div>
+
+
+<div class="card">
+<div class="gift">
+<div class="playstation">PLAYSTATION</div>
+<div class="store">STORE GIFT CARD</div>
+<div class="amount">R2,000</div>
+</div>
+
+<h3>R2,000 PlayStation</h3>
+<div class="price">N$1,999</div>
+
+<button class="buy"
+onclick="openCheckout('R2,000 PlayStation',1999)">
+BUY NOW
+</button>
+</div>
 
 </div>
 
 
 <div class="info">
 
-    <div class="info-box">
-        <strong>⚡ Digital Delivery</strong>
-        <p>Voucher codes are delivered electronically.</p>
-    </div>
+<div class="info-box">
+<strong>⚡ Digital Delivery</strong>
+<p>Voucher codes are delivered electronically.</p>
+</div>
 
-    <div class="info-box">
-        <strong>🔒 Secure Checkout</strong>
-        <p>Simple and secure ordering process.</p>
-    </div>
+<div class="info-box">
+<strong>🔒 Secure Checkout</strong>
+<p>Simple and secure ordering process.</p>
+</div>
 
-    <div class="info-box">
-        <strong>🎮 PS4 & PS5</strong>
-        <p>Use your PlayStation Store voucher on supported consoles.</p>
-    </div>
+<div class="info-box">
+<strong>🎮 PS4 & PS5</strong>
+<p>Use your PlayStation Store voucher on supported consoles.</p>
+</div>
 
 </div>
 
@@ -519,142 +539,167 @@ footer {
 
 <section id="checkout">
 
-    <div class="container">
+<div class="container">
 
-        <div class="checkout-box">
+<div class="checkout-box">
 
-            <button class="back" onclick="backToStore()">
-                ← Back to Store
-            </button>
+<button class="back" onclick="backToStore()">
+← Back to Store
+</button>
 
-            <h2>Checkout</h2>
+<h2>Checkout</h2>
 
-            <div id="checkoutForm">
+<div id="checkoutForm">
 
-                <div class="order-item">
+<div class="order-item">
 
-                    <div class="order-top">
+<div class="order-top">
 
-                        <div>
-                            <div class="order-name" id="productName">
-                                PlayStation Voucher
-                            </div>
+<div>
+<div class="order-name" id="productName">
+PlayStation Voucher
+</div>
 
-                            <small style="color:#718096;">
-                                Digital delivery
-                            </small>
-                        </div>
+<small style="color:#718096">
+Digital delivery
+</small>
+</div>
 
-                        <div class="order-price" id="unitPrice">
-                            N$0
-                        </div>
+<div class="order-price" id="unitPrice">
+N$0
+</div>
 
-                    </div>
-
-
-                    <div class="quantity-row">
-
-                        <span style="color:#9da9b8;">
-                            Quantity
-                        </span>
-
-                        <div class="quantity">
-
-                            <button onclick="changeQuantity(-1)">
-                                −
-                            </button>
-
-                            <span id="quantity">
-                                1
-                            </span>
-
-                            <button onclick="changeQuantity(1)">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
+</div>
 
 
-                <div class="summary">
+<div class="quantity-row">
 
-                    <div class="summary-line">
-                        <span>Product</span>
-                        <span id="summaryProduct">N$0</span>
-                    </div>
+<span style="color:#9da9b8">
+Quantity
+</span>
 
-                    <div class="summary-line">
-                        <span>Quantity</span>
-                        <span id="summaryQuantity">1</span>
-                    </div>
+<div class="quantity">
 
-                    <div class="summary-line total">
-                        <span>Total</span>
-                        <span id="total">N$0</span>
-                    </div>
+<button onclick="changeQuantity(-1)">−</button>
 
-                </div>
+<span id="quantity">1</span>
 
+<button onclick="changeQuantity(1)">+</button>
 
-                <label for="email">
-                    Email address
-                </label>
+</div>
 
-                <input
-                    id="email"
-                    type="email"
-                    placeholder="you@example.com"
-                    autocomplete="email"
-                >
+</div>
+
+</div>
 
 
-                <label for="confirmEmail">
-                    Confirm email address
-                </label>
+<div class="summary">
 
-                <input
-                    id="confirmEmail"
-                    type="email"
-                    placeholder="you@example.com"
-                    autocomplete="email"
-                >
+<div class="summary-line">
+<span>Product</span>
+<span id="summaryProduct">N$0</span>
+</div>
 
+<div class="summary-line">
+<span>Quantity</span>
+<span id="summaryQuantity">1</span>
+</div>
 
-                <div class="error" id="error">
-                    Please enter matching email addresses.
-                </div>
+<div class="summary-line total">
+<span>Total</span>
+<span id="total">N$0</span>
+</div>
 
-
-                <button
-                    class="payment-button"
-                    onclick="continuePayment()"
-                >
-                    CONTINUE TO PAYMENT
-                </button>
-
-            </div>
+</div>
 
 
-            <div class="ready" id="ready">
+<label for="email">
+Email address
+</label>
 
-                <div class="ready-icon">✓</div>
+<input
+id="email"
+type="email"
+placeholder="you@example.com"
+autocomplete="email"
+>
 
-                <h3>Order Ready</h3>
 
-                <p>
-                    Your order information has been received.
-                    The real payment gateway and automatic voucher
-                    delivery will be connected next.
-                </p>
+<label for="confirmEmail">
+Confirm email address
+</label>
 
-            </div>
+<input
+id="confirmEmail"
+type="email"
+placeholder="you@example.com"
+autocomplete="email"
+>
 
-        </div>
 
-    </div>
+<div class="payment-section">
+
+<div class="payment-title">
+Payment method
+</div>
+
+<div class="payment-option">
+
+<input
+class="payment-radio"
+type="radio"
+checked
+>
+
+<div class="payment-info">
+
+<strong>💳 Online Payment</strong>
+
+<small>
+Secure payment gateway
+</small>
+
+</div>
+
+</div>
+
+<div class="payment-note">
+You'll be redirected to the secure payment page when the payment gateway is connected.
+</div>
+
+</div>
+
+
+<div class="error" id="error">
+Please enter matching email addresses.
+</div>
+
+
+<button
+class="payment-button"
+onclick="continuePayment()">
+CONTINUE TO PAYMENT
+</button>
+
+</div>
+
+
+<div class="ready" id="ready">
+
+<div class="ready-icon">✓</div>
+
+<h3>Payment Step Ready</h3>
+
+<p>
+Your order details are ready.
+The secure payment gateway will be opened here once the merchant payment account is connected.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -662,127 +707,136 @@ footer {
 
 
 <footer>
-    © 2026 Code Hub Namibia
+© 2026 Code Hub Namibia
 </footer>
 
 
 <script>
 
-let selectedProduct = "";
-let selectedPrice = 0;
-let selectedQuantity = 1;
+let selectedProduct="";
+let selectedPrice=0;
+let selectedQuantity=1;
 
 
-function openCheckout(product, price) {
+function openCheckout(product,price){
 
-    selectedProduct = product;
-    selectedPrice = price;
-    selectedQuantity = 1;
+selectedProduct=product;
+selectedPrice=price;
+selectedQuantity=1;
 
-    document.getElementById("productName").textContent = product;
-    document.getElementById("unitPrice").textContent =
-        "N$" + price.toLocaleString();
+document.getElementById("productName").textContent=product;
 
-    document.getElementById("quantity").textContent = "1";
+document.getElementById("unitPrice").textContent=
+"N$"+price.toLocaleString();
 
-    document.getElementById("summaryProduct").textContent =
-        "N$" + price.toLocaleString();
+document.getElementById("quantity").textContent="1";
 
-    document.getElementById("summaryQuantity").textContent = "1";
+document.getElementById("summaryProduct").textContent=
+"N$"+price.toLocaleString();
 
-    document.getElementById("total").textContent =
-        "N$" + price.toLocaleString();
+document.getElementById("summaryQuantity").textContent="1";
 
-    document.getElementById("store").style.display = "none";
-    document.querySelector(".products").style.display = "none";
-    document.querySelector(".info").style.display = "none";
+document.getElementById("total").textContent=
+"N$"+price.toLocaleString();
 
-    document.getElementById("checkout").style.display = "block";
+document.getElementById("store").style.display="none";
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+document.querySelector(".products").style.display="none";
+
+document.querySelector(".info").style.display="none";
+
+document.getElementById("checkout").style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
 
-function changeQuantity(amount) {
+function changeQuantity(amount){
 
-    selectedQuantity += amount;
+selectedQuantity+=amount;
 
-    if (selectedQuantity < 1) {
-        selectedQuantity = 1;
-    }
+if(selectedQuantity<1)
+selectedQuantity=1;
 
-    if (selectedQuantity > 10) {
-        selectedQuantity = 10;
-    }
+if(selectedQuantity>10)
+selectedQuantity=10;
 
-    updateTotal();
+updateTotal();
+
 }
 
 
-function updateTotal() {
+function updateTotal(){
 
-    const total = selectedPrice * selectedQuantity;
+const total=selectedPrice*selectedQuantity;
 
-    document.getElementById("quantity").textContent =
-        selectedQuantity;
+document.getElementById("quantity").textContent=
+selectedQuantity;
 
-    document.getElementById("summaryQuantity").textContent =
-        selectedQuantity;
+document.getElementById("summaryQuantity").textContent=
+selectedQuantity;
 
-    document.getElementById("summaryProduct").textContent =
-        "N$" + total.toLocaleString();
+document.getElementById("summaryProduct").textContent=
+"N$"+total.toLocaleString();
 
-    document.getElementById("total").textContent =
-        "N$" + total.toLocaleString();
+document.getElementById("total").textContent=
+"N$"+total.toLocaleString();
+
 }
 
 
-function continuePayment() {
+function continuePayment(){
 
-    const email =
-        document.getElementById("email").value.trim();
+const email=
+document.getElementById("email").value.trim();
 
-    const confirmEmail =
-        document.getElementById("confirmEmail").value.trim();
+const confirmEmail=
+document.getElementById("confirmEmail").value.trim();
 
-    const error =
-        document.getElementById("error");
+const error=
+document.getElementById("error");
 
-    if (
-        email === "" ||
-        confirmEmail === "" ||
-        email !== confirmEmail ||
-        !email.includes("@")
-    ) {
+if(
+email==="" ||
+confirmEmail==="" ||
+email!==confirmEmail ||
+!email.includes("@")
+){
 
-        error.style.display = "block";
+error.style.display="block";
 
-        return;
-    }
+return;
 
-    error.style.display = "none";
+}
 
-    document.getElementById("checkoutForm").style.display = "none";
+error.style.display="none";
 
-    document.getElementById("ready").style.display = "block";
+document.getElementById("checkoutForm").style.display="none";
+
+document.getElementById("ready").style.display="block";
+
 }
 
 
-function backToStore() {
+function backToStore(){
 
-    document.getElementById("checkout").style.display = "none";
+document.getElementById("checkout").style.display="none";
 
-    document.getElementById("store").style.display = "block";
-    document.querySelector(".products").style.display = "grid";
-    document.querySelector(".info").style.display = "grid";
+document.getElementById("store").style.display="block";
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+document.querySelector(".products").style.display="grid";
+
+document.querySelector(".info").style.display="grid";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
 </script>
