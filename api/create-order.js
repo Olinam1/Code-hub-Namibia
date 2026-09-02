@@ -21,23 +21,6 @@ export default async function handler(req, res) {
       });
     }
 
-    if (quantity < 1 || quantity > 10) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid quantity"
-      });
-    }
-
-    if (
-      typeof email !== "string" ||
-      !email.includes("@")
-    ) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid email"
-      });
-    }
-
     const orderNumber =
       "CHN-" + Date.now().toString().slice(-8);
 
@@ -69,11 +52,11 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Supabase error:", errorText);
 
       return res.status(500).json({
         success: false,
-        message: "Unable to save order"
+        supabase_status: response.status,
+        supabase_error: errorText
       });
     }
 
@@ -85,11 +68,9 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error("Order error:", error);
-
     return res.status(500).json({
       success: false,
-      message: "Unable to create order"
+      error: error.message
     });
   }
 }
