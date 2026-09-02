@@ -13,43 +13,41 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #080b12;
-  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #070b12;
+  color: #ffffff;
   min-height: 100vh;
 }
 
 header {
-  padding: 22px 20px;
-  border-bottom: 1px solid #202633;
+  padding: 24px 20px;
   text-align: center;
+  border-bottom: 1px solid #18202d;
+  background: #090e17;
 }
 
 .logo {
-  font-size: 25px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 2px;
 }
 
-.logo span {
-  color: #00e5ff;
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 12px;
+  border: 1px solid #263548;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #aebbd0;
 }
 
 .hero {
   text-align: center;
   padding: 55px 20px 35px;
-}
-
-.badge {
-  display: inline-block;
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  color: #00e5ff;
-  padding: 8px 14px;
-  border-radius: 30px;
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 18px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .hero h1 {
@@ -59,261 +57,282 @@ header {
 }
 
 .hero h1 span {
-  color: #00e5ff;
+  color: #00d9ff;
 }
 
 .hero p {
-  color: #9ca6b8;
+  color: #9ca9bc;
   font-size: 17px;
-  max-width: 600px;
-  margin: auto;
   line-height: 1.6;
 }
 
 .products {
-  max-width: 1050px;
-  margin: 30px auto 70px;
-  padding: 0 20px;
+  width: min(1100px, 92%);
+  margin: 25px auto 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
 }
 
 .card {
-  background: #111621;
-  border: 1px solid #252c3a;
+  background: #0d141f;
+  border: 1px solid #1c2a3b;
   border-radius: 18px;
   padding: 18px;
-  transition: 0.2s;
+  transition: transform .2s, border-color .2s;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: #00e5ff;
+  border-color: #00d9ff;
 }
 
-.gift-card {
-  height: 145px;
+/* Original voucher artwork */
+.voucher {
+  height: 205px;
   border-radius: 14px;
-  padding: 20px;
-  margin-bottom: 18px;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(0,229,255,.35), transparent 35%),
-    linear-gradient(135deg, #171d2b, #090c13);
-  border: 1px solid #30394b;
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(0,217,255,.35), transparent 30%),
+    radial-gradient(circle at 20% 90%, rgba(91,72,255,.35), transparent 35%),
+    linear-gradient(135deg, #111827, #071018 65%, #0a2731);
+  border: 1px solid #294152;
 }
 
-.ps {
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 1px;
+.voucher::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+  right: -90px;
+  top: -90px;
 }
 
-.store {
-  color: #00e5ff;
+.voucher::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgba(0,217,255,.12);
+  border-radius: 50%;
+  left: -90px;
+  bottom: -90px;
+}
+
+.voucher-top,
+.voucher-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.voucher-brand {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.voucher-title {
+  margin-top: 7px;
   font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  color: #a9b7c8;
 }
 
 .amount {
-  font-size: 28px;
+  font-size: 42px;
   font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.digital {
+  font-size: 10px;
+  color: #8da0b5;
+  letter-spacing: 1px;
 }
 
 .card h2 {
-  font-size: 20px;
-  margin-bottom: 7px;
+  font-size: 19px;
+  margin-top: 18px;
 }
 
-.console {
-  color: #8f9aac;
+.details {
+  color: #8f9caf;
   font-size: 13px;
-  margin-bottom: 15px;
+  margin-top: 7px;
 }
 
 .price {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
-.price small {
-  color: #8f9aac;
-  font-size: 12px;
-  font-weight: normal;
-}
-
-button {
+.buy {
   width: 100%;
+  margin-top: 15px;
   padding: 14px;
   border: none;
-  border-radius: 11px;
-  background: #00e5ff;
-  color: #001014;
+  border-radius: 10px;
+  background: #00d9ff;
+  color: #041018;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
 }
 
-button:hover {
-  background: #5defff;
+.buy:hover {
+  filter: brightness(1.1);
 }
 
 .info {
-  max-width: 900px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
+  width: min(1000px, 92%);
+  margin: 0 auto 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
 
 .info-box {
-  background: #111621;
-  border: 1px solid #252c3a;
-  border-radius: 15px;
+  background: #0c121c;
+  border: 1px solid #182536;
+  border-radius: 14px;
   padding: 20px;
+  text-align: center;
 }
 
 .info-box h3 {
   margin-bottom: 8px;
+  font-size: 15px;
 }
 
 .info-box p {
-  color: #8f9aac;
+  color: #8f9caf;
   font-size: 13px;
   line-height: 1.5;
 }
 
-footer {
-  border-top: 1px solid #202633;
-  text-align: center;
-  padding: 25px;
-  color: #6f7888;
-  font-size: 12px;
-}
-
-/* CHECKOUT */
-
-#checkout {
+.checkout {
   display: none;
-  position: fixed;
-  inset: 0;
-  background: #080b12;
-  overflow-y: auto;
-  z-index: 1000;
-}
-
-.checkout-container {
-  width: 100%;
-  max-width: 650px;
-  margin: auto;
-  padding: 25px 20px 50px;
+  width: min(600px, 92%);
+  margin: 45px auto;
+  background: #0d141f;
+  border: 1px solid #1d2b3d;
+  border-radius: 18px;
+  padding: 25px;
 }
 
 .back {
-  background: transparent;
-  color: #9ca6b8;
-  border: 1px solid #30394b;
-  margin-bottom: 30px;
-}
-
-.back:hover {
-  background: #111621;
-  color: white;
-}
-
-.checkout-title {
-  font-size: 35px;
-  margin-bottom: 8px;
-}
-
-.checkout-subtitle {
-  color: #8f9aac;
-  margin-bottom: 30px;
-}
-
-.order-box {
-  background: #111621;
-  border: 1px solid #252c3a;
-  border-radius: 18px;
-  padding: 22px;
+  background: none;
+  border: none;
+  color: #8fa0b5;
+  cursor: pointer;
   margin-bottom: 20px;
 }
 
-.order-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 9px 0;
+.checkout h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
 }
 
-.order-row.total {
-  border-top: 1px solid #30394b;
-  margin-top: 10px;
-  padding-top: 18px;
-  font-size: 21px;
-  font-weight: bold;
+.checkout-sub {
+  color: #8997a9;
+  margin-bottom: 25px;
+}
+
+.summary {
+  background: #080e16;
+  border: 1px solid #182536;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 22px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  color: #aab6c6;
+}
+
+.summary-row strong {
+  color: white;
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
   font-size: 13px;
-  color: #b7c0ce;
+  font-weight: bold;
+  margin: 15px 0 7px;
 }
 
-input, select {
+input {
   width: 100%;
   padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #30394b;
-  background: #080b12;
+  border-radius: 9px;
+  border: 1px solid #263548;
+  background: #080e16;
   color: white;
   outline: none;
-  font-size: 15px;
-  margin-bottom: 18px;
 }
 
-input:focus, select:focus {
-  border-color: #00e5ff;
+input:focus {
+  border-color: #00d9ff;
 }
 
 .notice {
-  background: rgba(0,229,255,.07);
-  border: 1px solid rgba(0,229,255,.2);
-  color: #b9f7ff;
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 13px;
+  margin-top: 15px;
+  color: #8796a9;
+  font-size: 12px;
   line-height: 1.5;
-  margin-bottom: 20px;
 }
 
-.confirmation {
+.order-ready {
   display: none;
   text-align: center;
-  padding: 50px 10px;
+  padding: 25px 5px;
 }
 
-.confirmation-icon {
-  font-size: 55px;
-  margin-bottom: 20px;
+.order-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
 }
 
-.confirmation h2 {
-  font-size: 32px;
-  margin-bottom: 12px;
+.order-ready h2 {
+  margin-bottom: 10px;
 }
 
-.confirmation p {
-  color: #9ca6b8;
+.order-ready p {
+  color: #91a0b2;
   line-height: 1.6;
-  margin-bottom: 25px;
+}
+
+footer {
+  border-top: 1px solid #172131;
+  text-align: center;
+  padding: 25px;
+  color: #667386;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .voucher {
+    height: 190px;
+  }
 }
 </style>
 </head>
@@ -321,16 +340,14 @@ input:focus, select:focus {
 <body>
 
 <header>
-  <div class="logo">CODE HUB <span>NAMIBIA</span></div>
+  <div class="logo">CODE HUB NAMIBIA</div>
+  <div class="badge">🇳🇦 NAMIBIA'S DIGITAL GAMING STORE</div>
 </header>
 
 <main id="store">
 
 <section class="hero">
-  <div class="badge">🇳🇦 NAMIBIA'S DIGITAL GAMING STORE</div>
-
-  <h1>Game. Buy. <span>Play.</span></h1>
-
+  <h1>Game. <span>Buy.</span> Play.</h1>
   <p>
     Digital PlayStation Store vouchers for gamers in Namibia.
     Fast electronic delivery for PS4 & PS5.
@@ -340,68 +357,81 @@ input:focus, select:focus {
 <section class="products">
 
   <div class="card">
-    <div class="gift-card">
-      <div class="ps">PLAYSTATION</div>
-      <div class="store">STORE GIFT CARD</div>
-      <div class="amount">R500</div>
+    <div class="voucher">
+      <div class="voucher-top">
+        <div class="voucher-brand">PLAYSTATION</div>
+        <div class="voucher-title">STORE GIFT CARD</div>
+      </div>
+      <div class="voucher-bottom">
+        <div class="amount">R500</div>
+        <div class="digital">DIGITAL CODE • SOUTH AFRICA</div>
+      </div>
     </div>
 
     <h2>R500 PSN Voucher</h2>
-    <div class="console">🇿🇦 South Africa • PS4 & PS5</div>
-    <div class="price">N$499 <small>NAD</small></div>
-
-    <button onclick="openCheckout('R500 PSN Voucher', 499)">
+    <div class="details">🇿🇦 South Africa • PS4 & PS5</div>
+    <div class="price">N$499 NAD</div>
+    <button class="buy" onclick="openCheckout('R500 PSN Voucher','N$499 NAD')">
       Buy Now
     </button>
   </div>
 
-
   <div class="card">
-    <div class="gift-card">
-      <div class="ps">PLAYSTATION</div>
-      <div class="store">STORE GIFT CARD</div>
-      <div class="amount">R750</div>
+    <div class="voucher">
+      <div class="voucher-top">
+        <div class="voucher-brand">PLAYSTATION</div>
+        <div class="voucher-title">STORE GIFT CARD</div>
+      </div>
+      <div class="voucher-bottom">
+        <div class="amount">R750</div>
+        <div class="digital">DIGITAL CODE • SOUTH AFRICA</div>
+      </div>
     </div>
 
     <h2>R750 PSN Voucher</h2>
-    <div class="console">🇿🇦 South Africa • PS4 & PS5</div>
-    <div class="price">N$749 <small>NAD</small></div>
-
-    <button onclick="openCheckout('R750 PSN Voucher', 749)">
+    <div class="details">🇿🇦 South Africa • PS4 & PS5</div>
+    <div class="price">N$749 NAD</div>
+    <button class="buy" onclick="openCheckout('R750 PSN Voucher','N$749 NAD')">
       Buy Now
     </button>
   </div>
 
-
   <div class="card">
-    <div class="gift-card">
-      <div class="ps">PLAYSTATION</div>
-      <div class="store">STORE GIFT CARD</div>
-      <div class="amount">R1,000</div>
+    <div class="voucher">
+      <div class="voucher-top">
+        <div class="voucher-brand">PLAYSTATION</div>
+        <div class="voucher-title">STORE GIFT CARD</div>
+      </div>
+      <div class="voucher-bottom">
+        <div class="amount">R1,000</div>
+        <div class="digital">DIGITAL CODE • SOUTH AFRICA</div>
+      </div>
     </div>
 
     <h2>R1,000 PSN Voucher</h2>
-    <div class="console">🇿🇦 South Africa • PS4 & PS5</div>
-    <div class="price">N$999 <small>NAD</small></div>
-
-    <button onclick="openCheckout('R1,000 PSN Voucher', 999)">
+    <div class="details">🇿🇦 South Africa • PS4 & PS5</div>
+    <div class="price">N$999 NAD</div>
+    <button class="buy" onclick="openCheckout('R1,000 PSN Voucher','N$999 NAD')">
       Buy Now
     </button>
   </div>
 
-
   <div class="card">
-    <div class="gift-card">
-      <div class="ps">PLAYSTATION</div>
-      <div class="store">STORE GIFT CARD</div>
-      <div class="amount">R2,000</div>
+    <div class="voucher">
+      <div class="voucher-top">
+        <div class="voucher-brand">PLAYSTATION</div>
+        <div class="voucher-title">STORE GIFT CARD</div>
+      </div>
+      <div class="voucher-bottom">
+        <div class="amount">R2,000</div>
+        <div class="digital">DIGITAL CODE • SOUTH AFRICA</div>
+      </div>
     </div>
 
     <h2>R2,000 PSN Voucher</h2>
-    <div class="console">🇿🇦 South Africa • PS4 & PS5</div>
-    <div class="price">N$1,999 <small>NAD</small></div>
-
-    <button onclick="openCheckout('R2,000 PSN Voucher', 1999)">
+    <div class="details">🇿🇦 South Africa • PS4 & PS5</div>
+    <div class="price">N$1,999 NAD</div>
+    <button class="buy" onclick="openCheckout('R2,000 PSN Voucher','N$1,999 NAD')">
       Buy Now
     </button>
   </div>
@@ -427,145 +457,105 @@ input:focus, select:focus {
 
 </section>
 
-<footer>
-  © 2026 Code Hub Namibia
-</footer>
-
 </main>
 
+<section class="checkout" id="checkout">
 
-<!-- CHECKOUT -->
+  <button class="back" onclick="backToStore()">← Back to Store</button>
 
-<section id="checkout">
+  <h2>Checkout</h2>
+  <div class="checkout-sub">Complete your order details below.</div>
 
-  <div class="checkout-container">
-
-    <button class="back" onclick="closeCheckout()">← Back to Store</button>
-
-    <div id="checkoutForm">
-
-      <h1 class="checkout-title">Checkout</h1>
-
-      <p class="checkout-subtitle">
-        Complete your order details below.
-      </p>
-
-      <div class="order-box">
-
-        <div class="order-row">
-          <span>Product</span>
-          <strong id="checkoutProduct"></strong>
-        </div>
-
-        <div class="order-row">
-          <span>Delivery</span>
-          <span>Digital</span>
-        </div>
-
-        <div class="order-row total">
-          <span>Total</span>
-          <span id="checkoutPrice"></span>
-        </div>
-
-      </div>
-
-      <div class="order-box">
-
-        <label for="email">Email address</label>
-
-        <input
-          id="email"
-          type="email"
-          placeholder="you@example.com"
-          required
-        >
-
-        <label for="confirmEmail">Confirm email address</label>
-
-        <input
-          id="confirmEmail"
-          type="email"
-          placeholder="you@example.com"
-          required
-        >
-
-        <div class="notice">
-          📧 Your voucher will be sent to the email address you provide.
-        </div>
-
-        <button onclick="continueCheckout()">
-          Continue to Payment
-        </button>
-
-      </div>
-
+  <div class="summary">
+    <div class="summary-row">
+      <span>Product</span>
+      <strong id="checkoutProduct">—</strong>
     </div>
 
-
-    <div class="confirmation" id="confirmation">
-
-      <div class="confirmation-icon">✅</div>
-
-      <h2>Order Ready</h2>
-
-      <p>
-        Your order details have been received.
-        The real payment gateway and automatic voucher delivery
-        will be connected here next.
-      </p>
-
-      <button onclick="closeCheckout()">
-        Back to Store
-      </button>
-
+    <div class="summary-row">
+      <span>Delivery</span>
+      <strong>Digital</strong>
     </div>
 
+    <div class="summary-row">
+      <span>Total</span>
+      <strong id="checkoutPrice">—</strong>
+    </div>
+  </div>
+
+  <label for="email">Email address</label>
+  <input id="email" type="email" placeholder="you@example.com">
+
+  <label for="confirmEmail">Confirm email address</label>
+  <input id="confirmEmail" type="email" placeholder="you@example.com">
+
+  <div class="notice">
+    📧 Your voucher will be sent to the email address you provide.
+  </div>
+
+  <button class="buy" onclick="continuePayment()">
+    Continue to Payment
+  </button>
+
+  <div class="order-ready" id="orderReady">
+    <div class="order-icon">✅</div>
+    <h2>Order Ready</h2>
+    <p>
+      Your order details have been received.
+      The real payment gateway and automatic voucher delivery
+      will be connected here next.
+    </p>
+
+    <button class="buy" onclick="backToStore()">
+      Back to Store
+    </button>
   </div>
 
 </section>
 
+<footer>
+  © 2026 Code Hub Namibia
+</footer>
 
 <script>
 
 let selectedProduct = "";
-let selectedPrice = 0;
+let selectedPrice = "";
 
 function openCheckout(product, price) {
-
   selectedProduct = product;
   selectedPrice = price;
 
   document.getElementById("checkoutProduct").textContent = product;
-  document.getElementById("checkoutPrice").textContent =
-    "N$" + price.toLocaleString();
+  document.getElementById("checkoutPrice").textContent = price;
 
   document.getElementById("store").style.display = "none";
   document.getElementById("checkout").style.display = "block";
 
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
-
-function closeCheckout() {
-
+function backToStore() {
   document.getElementById("checkout").style.display = "none";
   document.getElementById("store").style.display = "block";
 
-  document.getElementById("checkoutForm").style.display = "block";
-  document.getElementById("confirmation").style.display = "none";
+  document.getElementById("orderReady").style.display = "none";
+  document.getElementById("email").style.display = "block";
+  document.getElementById("confirmEmail").style.display = "block";
 
-  document.getElementById("email").value = "";
-  document.getElementById("confirmEmail").value = "";
-
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
-
-function continueCheckout() {
+function continuePayment() {
 
   const email = document.getElementById("email").value.trim();
-  const confirmEmail =
-    document.getElementById("confirmEmail").value.trim();
+  const confirmEmail = document.getElementById("confirmEmail").value.trim();
 
   if (!email || !confirmEmail) {
     alert("Please enter your email address.");
@@ -577,8 +567,12 @@ function continueCheckout() {
     return;
   }
 
-  document.getElementById("checkoutForm").style.display = "none";
-  document.getElementById("confirmation").style.display = "block";
+  document.getElementById("email").style.display = "none";
+  document.getElementById("confirmEmail").style.display = "none";
+  document.querySelector(".checkout .notice").style.display = "none";
+  document.querySelector(".checkout .buy").style.display = "none";
+
+  document.getElementById("orderReady").style.display = "block";
 }
 
 </script>
