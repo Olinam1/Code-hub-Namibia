@@ -1,788 +1,1337 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Code Hub Namibia</title>
 
 <style>
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #080b10;
-  color: white;
-}
-
-header {
-  padding: 22px;
-  text-align: center;
-  border-bottom: 1px solid #1d2630;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.hero {
-  text-align: center;
-  padding: 55px 20px 35px;
-}
-
-.hero h1 {
-  font-size: 38px;
-  margin-bottom: 12px;
-}
-
-.hero p {
-  color: #aab4c0;
-  font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070b12;
+    color: white;
+    min-height: 100vh;
 }
 
 .container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+header {
+    padding: 24px 0;
+    border-bottom: 1px solid #17202d;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #00e5ff;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 15px 45px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #00e5ff;
+    border-radius: 30px;
+    color: #00e5ff;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 8vw, 70px);
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: #00e5ff;
+}
+
+.hero p {
+    color: #9da9b8;
+    max-width: 650px;
+    margin: auto;
+    font-size: 17px;
+    line-height: 1.6;
 }
 
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding-bottom: 45px;
 }
 
 .card {
-  background: #10151c;
-  border: 1px solid #202a35;
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
+    background: #0d131d;
+    border: 1px solid #1c2836;
+    border-radius: 18px;
+    padding: 18px;
+    transition: 0.2s;
 }
 
-.ps-card {
-  height: 135px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #151b24, #252d38);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 18px;
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #00e5ff;
 }
 
-.ps-card strong {
-  font-size: 12px;
-  letter-spacing: 2px;
+.gift {
+    height: 145px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #161d28, #05070b);
+    border: 1px solid #303b4a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
 }
 
-.ps-card span {
-  font-size: 32px;
-  font-weight: bold;
-  margin-top: 8px;
+.gift:after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 18px solid #00e5ff;
+    border-radius: 50%;
+    right: -45px;
+    top: -45px;
+    opacity: 0.25;
 }
 
-.card h2 {
-  font-size: 18px;
-  margin-bottom: 8px;
+.playstation {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.card p {
-  color: #aab4c0;
-  font-size: 14px;
-  margin-bottom: 15px;
+.store {
+    font-size: 10px;
+    color: #9da9b8;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+.amount {
+    font-size: 29px;
+    font-weight: 900;
+    color: #00e5ff;
+    margin-top: 12px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
 }
 
 .price {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-button {
-  border: none;
-  cursor: pointer;
-  border-radius: 9px;
-  padding: 13px 18px;
-  font-size: 15px;
-  font-weight: bold;
+    color: #00e5ff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 14px;
 }
 
 .buy {
-  width: 100%;
-  background: #00e5ff;
-  color: #061015;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 13px;
+    background: #00e5ff;
+    color: #001014;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
 }
 
 .buy:hover {
-  opacity: .9;
+    opacity: 0.85;
 }
 
 .info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-  margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding-bottom: 50px;
 }
 
 .info-box {
-  background: #10151c;
-  border: 1px solid #202a35;
-  border-radius: 12px;
-  padding: 20px;
+    background: #0d131d;
+    border: 1px solid #1c2836;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
 }
 
-.info-box h3 {
-  margin-bottom: 8px;
+.info-box strong {
+    display: block;
+    margin-bottom: 7px;
 }
 
 .info-box p {
-  color: #aab4c0;
-  font-size: 14px;
-  line-height: 1.5;
+    color: #8995a5;
+    font-size: 13px;
 }
 
-.checkout {
-  display: none;
-  max-width: 650px;
-  margin: 45px auto;
-  padding: 20px;
-}
+/* CHECKOUT */
 
-.back {
-  background: transparent;
-  color: #00e5ff;
-  padding: 0;
-  margin-bottom: 25px;
+#checkout {
+    display: none;
+    padding: 35px 0 70px;
 }
 
 .checkout-box {
-  background: #10151c;
-  border: 1px solid #202a35;
-  border-radius: 16px;
-  padding: 25px;
+    max-width: 650px;
+    margin: auto;
+    background: #0d131d;
+    border: 1px solid #1c2836;
+    border-radius: 20px;
+    padding: 25px;
 }
 
-.checkout h1 {
-  margin-bottom: 10px;
+.back {
+    background: transparent;
+    color: #9da9b8;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 14px;
 }
 
-.subtitle {
-  color: #aab4c0;
-  margin-bottom: 25px;
+.checkout-box h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
 }
 
-.product-summary {
-  background: #080b10;
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 20px;
+.order-item {
+    background: #080d14;
+    border: 1px solid #1c2836;
+    border-radius: 14px;
+    padding: 17px;
+    margin-bottom: 20px;
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  margin: 10px 0;
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
 }
 
-.label {
-  color: #aab4c0;
+.order-name {
+    font-weight: bold;
+}
+
+.order-price {
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+.quantity-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
 }
 
 .quantity {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .quantity button {
-  width: 38px;
-  height: 38px;
-  padding: 0;
-  background: #252d38;
-  color: white;
-  font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 9px;
+    border: 1px solid #344354;
+    background: #121a25;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.quantity-number {
-  min-width: 25px;
-  text-align: center;
-  font-weight: bold;
+.quantity span {
+    min-width: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.summary {
+    border-top: 1px solid #1c2836;
+    margin-top: 20px;
+    padding-top: 18px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #9da9b8;
 }
 
 .total {
-  font-size: 24px;
-  font-weight: bold;
-  color: #00e5ff;
+    color: white;
+    font-size: 21px;
+    font-weight: 900;
+    margin-top: 15px;
+}
+
+.total span {
+    color: #00e5ff;
+}
+
+label {
+    display: block;
+    margin-top: 22px;
+    margin-bottom: 7px;
+    font-size: 13px;
+    color: #cbd3dd;
 }
 
 input {
-  width: 100%;
-  padding: 14px;
-  margin-top: 8px;
-  margin-bottom: 15px;
-  border-radius: 9px;
-  border: 1px solid #2a3542;
-  background: #080b10;
-  color: white;
-  font-size: 15px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #293646;
+    background: #080d14;
+    color: white;
+    font-size: 15px;
+    outline: none;
 }
 
-.payment-box {
-  background: #080b10;
-  border: 1px solid #202a35;
-  border-radius: 12px;
-  padding: 18px;
-  margin: 10px 0 20px;
+input:focus {
+    border-color: #00e5ff;
 }
 
-.payment-box strong {
-  display: block;
-  margin-bottom: 7px;
+.payment-button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 11px;
+    background: #00e5ff;
+    color: #001014;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
 }
 
-.payment-box span {
-  color: #aab4c0;
-  font-size: 14px;
+.payment-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
 }
 
-.confirm {
-  width: 100%;
-  background: #00e5ff;
-  color: #061015;
-  margin-top: 5px;
+.error {
+    display: none;
+    color: #ff6678;
+    margin-top: 12px;
+    font-size: 13px;
 }
 
-.confirmation {
-  display: none;
-  max-width: 650px;
-  margin: 55px auto;
-  padding: 20px;
+.ready {
+    display: none;
+    text-align: center;
+    padding: 30px 10px;
 }
 
-.confirmation-box {
-  background: #10151c;
-  border: 1px solid #202a35;
-  border-radius: 16px;
-  padding: 30px;
-  text-align: center;
+.ready-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
 }
 
-.success-icon {
-  font-size: 50px;
-  margin-bottom: 15px;
+.ready h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.ready p {
+    color: #9da9b8;
+    line-height: 1.6;
 }
 
 .order-number {
-  font-size: 26px;
-  font-weight: bold;
-  color: #00e5ff;
-  margin: 15px 0 25px;
-}
-
-.confirmation-details {
-  background: #080b10;
-  border-radius: 12px;
-  padding: 18px;
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.note {
-  color: #aab4c0;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.home-btn {
-  background: #252d38;
-  color: white;
-  width: 100%;
+    color: #00e5ff;
+    font-weight: bold;
+    margin: 15px 0;
 }
 
 footer {
-  text-align: center;
-  color: #687482;
-  padding: 40px 20px;
-  font-size: 13px;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #17202d;
+    color: #657182;
+    font-size: 12px;
 }
 
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 30px;
-  }
+/* MOBILE */
 
-  .checkout-box,
-  .confirmation-box {
-    padding: 20px;
-  }
+@media (max-width: 850px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
 }
+
+@media (max-width: 520px) {
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .checkout-box {
+        padding: 20px;
+    }
+}
+
 </style>
 </head>
+
 
 <body>
 
 <header>
-  <div class="logo">CODE HUB NAMIBIA</div>
+
+    <div class="container">
+
+        <div class="logo">
+            CODE HUB <span>NAMIBIA</span>
+        </div>
+
+    </div>
+
 </header>
 
-<main id="store">
 
-<section class="hero">
-  <h1>🇳🇦 NAMIBIA'S DIGITAL GAMING STORE</h1>
-  <p>Game. Buy. Play.</p>
-  <p style="margin-top:10px;">
-    Digital PlayStation Store vouchers for gamers in Namibia.
-  </p>
-</section>
+<main>
 
-<div class="container">
 
-<section class="products">
+<section class="hero" id="store">
 
-  <div class="card">
-    <div class="ps-card">
-      <strong>PLAYSTATION</strong>
-      <span>R500</span>
+    <div class="container">
+
+        <div class="badge">
+            🇳🇦 NAMIBIA'S DIGITAL GAMING STORE
+        </div>
+
+        <h1>
+            Game. <span>Buy.</span> Play.
+        </h1>
+
+        <p>
+            Digital PlayStation Store vouchers for gamers in Namibia.
+            Fast electronic delivery for PS4 & PS5.
+        </p>
+
     </div>
-    <h2>R500 PSN Voucher</h2>
-    <p>🇿🇦 South Africa • PS4 & PS5</p>
-    <div class="price">N$499</div>
-    <button class="buy" onclick="startCheckout('R500 PSN Voucher',499)">
-      Buy Now
-    </button>
-  </div>
-
-  <div class="card">
-    <div class="ps-card">
-      <strong>PLAYSTATION</strong>
-      <span>R750</span>
-    </div>
-    <h2>R750 PSN Voucher</h2>
-    <p>🇿🇦 South Africa • PS4 & PS5</p>
-    <div class="price">N$749</div>
-    <button class="buy" onclick="startCheckout('R750 PSN Voucher',749)">
-      Buy Now
-    </button>
-  </div>
-
-  <div class="card">
-    <div class="ps-card">
-      <strong>PLAYSTATION</strong>
-      <span>R1,000</span>
-    </div>
-    <h2>R1,000 PSN Voucher</h2>
-    <p>🇿🇦 South Africa • PS4 & PS5</p>
-    <div class="price">N$999</div>
-    <button class="buy" onclick="startCheckout('R1,000 PSN Voucher',999)">
-      Buy Now
-    </button>
-  </div>
-
-  <div class="card">
-    <div class="ps-card">
-      <strong>PLAYSTATION</strong>
-      <span>R2,000</span>
-    </div>
-    <h2>R2,000 PSN Voucher</h2>
-    <p>🇿🇦 South Africa • PS4 & PS5</p>
-    <div class="price">N$1,999</div>
-    <button class="buy" onclick="startCheckout('R2,000 PSN Voucher',1999)">
-      Buy Now
-    </button>
-  </div>
 
 </section>
 
-<section class="info">
 
-  <div class="info-box">
-    <h3>⚡ Digital Delivery</h3>
-    <p>Your voucher code will be delivered electronically after successful payment.</p>
-  </div>
 
-  <div class="info-box">
-    <h3>🔒 Secure Checkout</h3>
-    <p>Your checkout information will be handled securely.</p>
-  </div>
+<section class="container">
 
-  <div class="info-box">
-    <h3>🎮 PS4 & PS5</h3>
-    <p>South African PlayStation Store vouchers for PS4 and PS5 accounts.</p>
-  </div>
+<div class="products">
 
-</section>
+
+    <!-- R500 -->
+
+    <div class="card">
+
+        <div class="gift">
+
+            <div class="playstation">
+                PLAYSTATION
+            </div>
+
+            <div class="store">
+                STORE GIFT CARD
+            </div>
+
+            <div class="amount">
+                R500
+            </div>
+
+        </div>
+
+        <h3>
+            R500 PlayStation
+        </h3>
+
+        <div class="price">
+            N$499
+        </div>
+
+        <button
+            class="buy"
+            onclick="openCheckout('R500 PlayStation',499)"
+        >
+            BUY NOW
+        </button>
+
+    </div>
+
+
+
+    <!-- R750 -->
+
+    <div class="card">
+
+        <div class="gift">
+
+            <div class="playstation">
+                PLAYSTATION
+            </div>
+
+            <div class="store">
+                STORE GIFT CARD
+            </div>
+
+            <div class="amount">
+                R750
+            </div>
+
+        </div>
+
+        <h3>
+            R750 PlayStation
+        </h3>
+
+        <div class="price">
+            N$749
+        </div>
+
+        <button
+            class="buy"
+            onclick="openCheckout('R750 PlayStation',749)"
+        >
+            BUY NOW
+        </button>
+
+    </div>
+
+
+
+    <!-- R1000 -->
+
+    <div class="card">
+
+        <div class="gift">
+
+            <div class="playstation">
+                PLAYSTATION
+            </div>
+
+            <div class="store">
+                STORE GIFT CARD
+            </div>
+
+            <div class="amount">
+                R1,000
+            </div>
+
+        </div>
+
+        <h3>
+            R1,000 PlayStation
+        </h3>
+
+        <div class="price">
+            N$999
+        </div>
+
+        <button
+            class="buy"
+            onclick="openCheckout('R1,000 PlayStation',999)"
+        >
+            BUY NOW
+        </button>
+
+    </div>
+
+
+
+    <!-- R2000 -->
+
+    <div class="card">
+
+        <div class="gift">
+
+            <div class="playstation">
+                PLAYSTATION
+            </div>
+
+            <div class="store">
+                STORE GIFT CARD
+            </div>
+
+            <div class="amount">
+                R2,000
+            </div>
+
+        </div>
+
+        <h3>
+            R2,000 PlayStation
+        </h3>
+
+        <div class="price">
+            N$1,999
+        </div>
+
+        <button
+            class="buy"
+            onclick="openCheckout('R2,000 PlayStation',1999)"
+        >
+            BUY NOW
+        </button>
+
+    </div>
+
 
 </div>
-</main>
+
+
+
+<div class="info">
+
+
+    <div class="info-box">
+
+        <strong>
+            ⚡ Digital Delivery
+        </strong>
+
+        <p>
+            Voucher codes are delivered electronically.
+        </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <strong>
+            🔒 Secure Checkout
+        </strong>
+
+        <p>
+            Simple and secure ordering process.
+        </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <strong>
+            🎮 PS4 & PS5
+        </strong>
+
+        <p>
+            Use your PlayStation Store voucher on supported consoles.
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
 
 
 <!-- CHECKOUT -->
 
-<section id="checkout" class="checkout">
+<section id="checkout">
 
-  <button class="back" onclick="backToStore()">← Back to Store</button>
+    <div class="container">
 
-  <div class="checkout-box">
+        <div class="checkout-box">
 
-    <h1>Checkout</h1>
-    <p class="subtitle">Complete your order details below.</p>
 
-    <div class="product-summary">
+            <button
+                class="back"
+                onclick="backToStore()"
+            >
+                ← Back to Store
+            </button>
 
-      <div class="row">
-        <span class="label">Product</span>
-        <strong id="checkoutProduct"></strong>
-      </div>
 
-      <div class="row">
-        <span class="label">Delivery</span>
-        <strong>Digital</strong>
-      </div>
+            <h2>
+                Checkout
+            </h2>
 
-      <div class="row">
-        <span class="label">Quantity</span>
 
-        <div class="quantity">
-          <button onclick="changeQuantity(-1)">−</button>
-          <span id="quantity" class="quantity-number">1</span>
-          <button onclick="changeQuantity(1)">+</button>
+
+            <div id="checkoutForm">
+
+
+                <div class="order-item">
+
+
+                    <div class="order-top">
+
+
+                        <div>
+
+                            <div
+                                class="order-name"
+                                id="productName"
+                            >
+                                PlayStation Voucher
+                            </div>
+
+                            <small style="color:#718096;">
+                                Digital delivery
+                            </small>
+
+                        </div>
+
+
+                        <div
+                            class="order-price"
+                            id="unitPrice"
+                        >
+                            N$0
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="quantity-row">
+
+
+                        <span style="color:#9da9b8;">
+                            Quantity
+                        </span>
+
+
+                        <div class="quantity">
+
+
+                            <button
+                                onclick="changeQuantity(-1)"
+                            >
+                                −
+                            </button>
+
+
+                            <span id="quantity">
+                                1
+                            </span>
+
+
+                            <button
+                                onclick="changeQuantity(1)"
+                            >
+                                +
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="summary">
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Product
+                        </span>
+
+                        <span id="summaryProduct">
+                            N$0
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Quantity
+                        </span>
+
+                        <span id="summaryQuantity">
+                            1
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-line total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <span id="total">
+                            N$0
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <label for="email">
+                    Email address
+                </label>
+
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                >
+
+
+
+                <label for="confirmEmail">
+                    Confirm email address
+                </label>
+
+
+                <input
+                    id="confirmEmail"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                >
+
+
+
+                <div
+                    class="error"
+                    id="error"
+                >
+                    Please enter matching email addresses.
+                </div>
+
+
+
+                <button
+                    class="payment-button"
+                    onclick="continuePayment()"
+                >
+                    CONTINUE TO PAYMENT
+                </button>
+
+
+            </div>
+
+
+
+            <!-- ORDER CREATED -->
+
+            <div
+                class="ready"
+                id="ready"
+            >
+
+                <div class="ready-icon">
+                    ✓
+                </div>
+
+
+                <h3>
+                    Order Created
+                </h3>
+
+
+                <div
+                    class="order-number"
+                    id="orderNumber"
+                >
+                    Order #
+                </div>
+
+
+                <p>
+                    Your order has been created successfully.
+                </p>
+
+
+                <p style="margin-top:10px;">
+
+                    Product:
+                    <strong id="confirmProduct">
+                    </strong>
+
+                    <br>
+
+                    Quantity:
+                    <strong id="confirmQuantity">
+                    </strong>
+
+                    <br>
+
+                    Total:
+                    <strong id="confirmTotal">
+                    </strong>
+
+                    <br>
+
+                    Email:
+                    <strong id="confirmEmailAddress">
+                    </strong>
+
+                </p>
+
+
+                <p style="margin-top:20px;">
+
+                    Payment gateway and automatic voucher
+                    delivery will be connected next.
+
+                </p>
+
+
+            </div>
+
+
         </div>
-      </div>
-
-      <div class="row" style="margin-top:20px;">
-        <span class="label">Total</span>
-        <span id="total" class="total"></span>
-      </div>
 
     </div>
 
-    <label>Email address</label>
-    <input id="email" type="email" placeholder="you@example.com">
-
-    <label>Confirm email address</label>
-    <input id="confirmEmail" type="email" placeholder="you@example.com">
-
-    <p style="color:#aab4c0;font-size:14px;margin-bottom:20px;">
-      📧 Your voucher will be sent to the email address you provide.
-    </p>
-
-    <div class="payment-box">
-      <strong>💳 Online Payment</strong>
-      <span>Secure payment gateway</span>
-    </div>
-
-    <button class="confirm" onclick="createOrder()">
-      Continue to Payment
-    </button>
-
-  </div>
 </section>
 
 
-<!-- CONFIRMATION -->
+</main>
 
-<section id="confirmation" class="confirmation">
-
-  <div class="confirmation-box">
-
-    <div class="success-icon">✅</div>
-
-    <h1>Order Created</h1>
-
-    <p class="subtitle">
-      Your order has been successfully created.
-    </p>
-
-    <div id="orderNumber" class="order-number"></div>
-
-    <div class="confirmation-details">
-
-      <div class="row">
-        <span class="label">Product</span>
-        <strong id="confirmProduct"></strong>
-      </div>
-
-      <div class="row">
-        <span class="label">Quantity</span>
-        <strong id="confirmQuantity"></strong>
-      </div>
-
-      <div class="row">
-        <span class="label">Total</span>
-        <strong id="confirmTotal"></strong>
-      </div>
-
-      <div class="row">
-        <span class="label">Email</span>
-        <strong id="confirmEmailAddress"></strong>
-      </div>
-
-    </div>
-
-    <p class="note">
-      Your order number has been generated successfully.
-      Payment processing and automatic voucher delivery will be connected
-      to this order system in the next steps.
-    </p>
-
-    <button class="home-btn" onclick="backToStore()">
-      Back to Store
-    </button>
-
-  </div>
-
-</section>
 
 
 <footer>
-  © 2026 Code Hub Namibia
+
+    © 2026 Code Hub Namibia
+
 </footer>
+
 
 
 <script>
 
+
 let selectedProduct = "";
+
 let selectedPrice = 0;
-let quantity = 1;
+
+let selectedQuantity = 1;
 
 
-/* START CHECKOUT */
 
-function startCheckout(product, price) {
+/* OPEN CHECKOUT */
 
-  selectedProduct = product;
-  selectedPrice = price;
-  quantity = 1;
+function openCheckout(product, price) {
 
-  document.getElementById("store").style.display = "none";
-  document.getElementById("checkout").style.display = "block";
-  document.getElementById("confirmation").style.display = "none";
+    selectedProduct = product;
 
-  document.getElementById("checkoutProduct").textContent = product;
-  document.getElementById("quantity").textContent = quantity;
+    selectedPrice = price;
 
-  updateTotal();
+    selectedQuantity = 1;
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+
+    document.getElementById("productName").textContent =
+        product;
+
+
+    document.getElementById("unitPrice").textContent =
+        "N$" + price.toLocaleString();
+
+
+    document.getElementById("quantity").textContent =
+        "1";
+
+
+    document.getElementById("summaryProduct").textContent =
+        "N$" + price.toLocaleString();
+
+
+    document.getElementById("summaryQuantity").textContent =
+        "1";
+
+
+    document.getElementById("total").textContent =
+        "N$" + price.toLocaleString();
+
+
+    document.getElementById("store").style.display =
+        "none";
+
+
+    document.querySelector(".products").style.display =
+        "none";
+
+
+    document.querySelector(".info").style.display =
+        "none";
+
+
+    document.getElementById("checkout").style.display =
+        "block";
+
+
+    document.getElementById("checkoutForm").style.display =
+        "block";
+
+
+    document.getElementById("ready").style.display =
+        "none";
+
+
+    document.getElementById("email").value =
+        "";
+
+
+    document.getElementById("confirmEmail").value =
+        "";
+
+
+    document.getElementById("error").style.display =
+        "none";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
 }
 
 
-/* QUANTITY */
+
+/* CHANGE QUANTITY */
 
 function changeQuantity(amount) {
 
-  quantity += amount;
+    selectedQuantity += amount;
 
-  if (quantity < 1) {
-    quantity = 1;
-  }
 
-  if (quantity > 10) {
-    quantity = 10;
-  }
+    if (selectedQuantity < 1) {
 
-  document.getElementById("quantity").textContent = quantity;
+        selectedQuantity = 1;
 
-  updateTotal();
+    }
+
+
+    if (selectedQuantity > 10) {
+
+        selectedQuantity = 10;
+
+    }
+
+
+    updateTotal();
+
 }
 
 
-/* TOTAL */
+
+/* UPDATE TOTAL */
 
 function updateTotal() {
 
-  const total = selectedPrice * quantity;
+    const total =
+        selectedPrice * selectedQuantity;
 
-  document.getElementById("total").textContent =
-    "N$" + total.toLocaleString();
+
+    document.getElementById("quantity").textContent =
+        selectedQuantity;
+
+
+    document.getElementById("summaryQuantity").textContent =
+        selectedQuantity;
+
+
+    document.getElementById("summaryProduct").textContent =
+        "N$" + total.toLocaleString();
+
+
+    document.getElementById("total").textContent =
+        "N$" + total.toLocaleString();
+
 }
+
 
 
 /* CREATE ORDER */
 
-async function createOrder() {
+async function continuePayment() {
 
-  const email = document.getElementById("email").value.trim();
-  const confirmEmail = document.getElementById("confirmEmail").value.trim();
 
-  if (!email) {
-    alert("Please enter your email address.");
-    return;
-  }
+    const email =
+        document.getElementById("email").value.trim();
 
-  if (!email.includes("@")) {
-    alert("Please enter a valid email address.");
-    return;
-  }
 
-  if (!confirmEmail) {
-    alert("Please confirm your email address.");
-    return;
-  }
+    const confirmEmail =
+        document.getElementById("confirmEmail").value.trim();
 
-  if (email !== confirmEmail) {
-    alert("The email addresses do not match.");
-    return;
-  }
 
-  const button = document.querySelector(".confirm");
+    const error =
+        document.getElementById("error");
 
-  button.disabled = true;
-  button.textContent = "Creating Order...";
 
-  try {
+    /* CHECK EMAIL */
 
-    const response = await fetch("/api/create-order", {
+    if (
+        email === "" ||
+        confirmEmail === "" ||
+        email !== confirmEmail ||
+        !email.includes("@")
+    ) {
 
-      method: "POST",
+        error.style.display =
+            "block";
 
-      headers: {
-        "Content-Type": "application/json"
-      },
+        return;
 
-      body: JSON.stringify({
-        product: selectedProduct,
-        price: selectedPrice,
-        quantity: quantity,
-        email: email
-      })
-
-    });
-
-    const data = await response.json();
-
-    if (!response.ok || !data.success) {
-      throw new Error(
-        data.message || "Unable to create order."
-      );
     }
 
-    const order = data.order;
 
-    document.getElementById("orderNumber").textContent =
-      "Order #" + order.orderNumber;
+    error.style.display =
+        "none";
 
-    document.getElementById("confirmProduct").textContent =
-      order.product;
 
-    document.getElementById("confirmQuantity").textContent =
-      order.quantity;
+    const button =
+        document.querySelector(".payment-button");
 
-    document.getElementById("confirmTotal").textContent =
-      "N$" + Number(order.total).toLocaleString();
 
-    document.getElementById("confirmEmailAddress").textContent =
-      order.email;
+    button.disabled =
+        true;
 
-    document.getElementById("checkout").style.display = "none";
-    document.getElementById("confirmation").style.display = "block";
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    button.textContent =
+        "CREATING ORDER...";
 
-  } catch (error) {
 
-    console.error(error);
+    try {
 
-    alert(
-      "We couldn't create your order. Please try again."
-    );
 
-    button.disabled = false;
-    button.textContent = "Continue to Payment";
-  }
+        const response =
+            await fetch(
+                "/api/create-order",
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            product:
+                                selectedProduct,
+
+                            price:
+                                selectedPrice,
+
+                            quantity:
+                                selectedQuantity,
+
+                            email:
+                                email
+
+                        })
+
+                }
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Unable to create order."
+            );
+
+        }
+
+
+
+        const order =
+            data.order;
+
+
+
+        /* SHOW ORDER */
+
+        document.getElementById(
+            "orderNumber"
+        ).textContent =
+            "Order #" +
+            order.orderNumber;
+
+
+
+        document.getElementById(
+            "confirmProduct"
+        ).textContent =
+            order.product;
+
+
+
+        document.getElementById(
+            "confirmQuantity"
+        ).textContent =
+            order.quantity;
+
+
+
+        document.getElementById(
+            "confirmTotal"
+        ).textContent =
+            "N$" +
+            Number(order.total)
+                .toLocaleString();
+
+
+
+        document.getElementById(
+            "confirmEmailAddress"
+        ).textContent =
+            order.email;
+
+
+
+        document.getElementById(
+            "checkoutForm"
+        ).style.display =
+            "none";
+
+
+
+        document.getElementById(
+            "ready"
+        ).style.display =
+            "block";
+
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+
+    } catch (error) {
+
+
+        console.error(error);
+
+
+        alert(
+            "We couldn't create your order. Please try again."
+        );
+
+
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            "CONTINUE TO PAYMENT";
+
+    }
+
 }
 
-  const email = document.getElementById("email").value.trim();
-  const confirmEmail = document.getElementById("confirmEmail").value.trim();
-
-  if (!email) {
-    alert("Please enter your email address.");
-    return;
-  }
-
-  if (!email.includes("@")) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  if (!confirmEmail) {
-    alert("Please confirm your email address.");
-    return;
-  }
-
-  if (email !== confirmEmail) {
-    alert("The email addresses do not match.");
-    return;
-  }
-
-  /*
-    Generate a temporary order number.
-
-    This is currently generated in the browser.
-    Later, when we build the backend, the server will
-    generate the permanent order number.
-  */
-
-  const randomNumber =
-    Math.floor(10000 + Math.random() * 90000);
-
-  const orderNumber = "CHN-" + randomNumber;
-
-  const total = selectedPrice * quantity;
-
-  document.getElementById("orderNumber").textContent =
-    "Order #" + orderNumber;
-
-  document.getElementById("confirmProduct").textContent =
-    selectedProduct;
-
-  document.getElementById("confirmQuantity").textContent =
-    quantity;
-
-  document.getElementById("confirmTotal").textContent =
-    "N$" + total.toLocaleString();
-
-  document.getElementById("confirmEmailAddress").textContent =
-    email;
-
-  document.getElementById("checkout").style.display = "none";
-  document.getElementById("confirmation").style.display = "block";
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
 
 
 /* BACK TO STORE */
 
 function backToStore() {
 
-  document.getElementById("store").style.display = "block";
-  document.getElementById("checkout").style.display = "none";
-  document.getElementById("confirmation").style.display = "none";
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+    document.getElementById(
+        "checkout"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "store"
+    ).style.display =
+        "block";
+
+
+    document.querySelector(
+        ".products"
+    ).style.display =
+        "grid";
+
+
+    document.querySelector(
+        ".info"
+    ).style.display =
+        "grid";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
 }
 
 </script>
 
 </body>
 </html>
+```
+
